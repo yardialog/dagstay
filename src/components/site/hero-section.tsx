@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check, ArrowRight, Sparkles, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLeadStore } from "@/lib/lead-store";
 
@@ -76,16 +76,29 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24, ease: "easeOut" }}
-            className="flex w-full flex-col gap-4 sm:w-auto"
+            className="flex w-full flex-col gap-4"
           >
-            <Button
-              size="lg"
-              onClick={() => open("hero")}
-              className="group h-12 w-full bg-gold px-7 text-base font-semibold text-gold-foreground shadow-xl shadow-black/30 transition-all hover:bg-gold/90 hover:shadow-gold/30 sm:w-auto"
-            >
-              Получить бесплатный аудит объекта
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <Button
+                size="lg"
+                onClick={() => open("hero")}
+                className="group h-12 w-full bg-gold px-7 text-base font-semibold text-gold-foreground shadow-xl shadow-black/30 transition-all hover:bg-gold/90 hover:shadow-gold/30 sm:w-auto"
+              >
+                Получить бесплатный аудит объекта
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button
+                size="lg"
+                asChild
+                variant="outline"
+                className="group h-12 w-full border-white/30 bg-white/10 px-7 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:text-white sm:w-auto"
+              >
+                <a href="#packages">
+                  <LayoutGrid className="size-4" />
+                  Смотреть пакеты
+                </a>
+              </Button>
+            </div>
             <p className="max-w-md text-sm text-white/75">
               За 15 минут покажем, где вы теряете гостей и какие изменения
               быстрее всего увеличат количество прямых бронирований.
