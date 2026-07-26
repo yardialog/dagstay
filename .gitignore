@@ -52,3 +52,10 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Database files (contain PII - leads data)
+db/*.db
+db/*.db-journal
+
+# Upload directory (user-uploaded content)
+/upload/
