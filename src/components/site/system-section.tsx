@@ -5,6 +5,7 @@ import {
   Search,
   Globe,
   Bot,
+  CalendarCheck,
   Database,
   HeartHandshake,
   TrendingUp,
@@ -25,8 +26,13 @@ const STEPS = [
   },
   {
     icon: Bot,
-    title: "Оставляют заявку",
+    title: "Задают вопросы",
     text: "AI-помощник отвечает на вопросы, помогает подобрать даты и принимает обращения даже ночью.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Оставляют заявки",
+    text: "Система букинга показывает свободные даты и позволяет забронировать номер за 1 минуту. Перед оплатой гость сам выбирает дополнительные услуги: трансфер, SPA, экскурсии.",
   },
   {
     icon: Database,
@@ -64,7 +70,7 @@ export function SystemSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: "easeOut" }}
             className={
-              i === 4 ? "md:col-span-2 lg:col-span-1" : ""
+              i === 5 ? "md:col-span-2 lg:col-span-1" : ""
             }
           >
             <Card className="group relative h-full overflow-hidden border-border/70 transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5">
