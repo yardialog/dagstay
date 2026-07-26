@@ -1,160 +1,121 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, MapPin } from "lucide-react";
-import { Section, SectionHeading, CtaButton } from "./section-primitives";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import {
+  Sparkles,
+  CalendarClock,
+  Users,
+  Rocket,
+  ArrowRight,
+} from "lucide-react";
+import { Section, SectionHeading } from "./section-primitives";
+import { useLeadStore } from "@/lib/lead-store";
+import { Button } from "@/components/ui/button";
 
-type Case = {
-  name: string;
-  type: string;
-  before: { value: string; label: string };
-  after: { value: string; label: string };
-  done: string[];
-  result: string;
-};
-
-const CASES: Case[] = [
+const POINTS = [
   {
-    name: "Гостевой дом «Сулак»",
-    type: "Гостевой дом · 12 номеров · Дербент",
-    before: { value: "70%", label: "броней через агрегаторов" },
-    after: { value: "35%", label: "броней через агрегаторов" },
-    done: [
-      "Запустили сайт с онлайн-заявкой",
-      "Настроили Яндекс.Директ",
-      "Подключили AI-помощника 24/7",
-    ],
-    result: "Прямые бронирования выросли в 2 раза за 2 месяца.",
+    icon: CalendarClock,
+    title: "Первые проекты запускаются в сентябре 2026",
+    text: "Формируем стартовую группу объектов прямо сейчас.",
   },
   {
-    name: "Глэмпинг «Гимринский»",
-    type: "Глэмпинг · 8 номеров · Гимры",
-    before: { value: "0", label: "повторных гостей" },
-    after: { value: "28%", label: "возвращаются снова" },
-    done: [
-      "Автоматическая воронка возврата",
-      "Программа лояльности",
-      "E-mail и Telegram-рассылки",
-    ],
-    result: "Каждый четвёртый гость бронирует повторно.",
+    icon: Users,
+    title: "Отбираем 5 объектов",
+    text: "Для бесплатного аудита и внедрения системы прямых бронирований.",
   },
   {
-    name: "Отель «Каспий»",
-    type: "Отель · 45 номеров · Махачкала",
-    before: { value: "4 ч", label: "среднее время ответа" },
-    after: { value: "30 сек", label: "ответ AI-помощника" },
-    done: [
-      "Внедрили AI-ассистента",
-      "Интеграция календарей",
-      "Защита от овербукинга",
-    ],
-    result: "Конверсия из заявки в бронирование +38%.",
+    icon: Rocket,
+    title: "Станьте одним из них",
+    text: "И получите кейс с подробным разбором результатов вашего объекта.",
   },
 ];
 
 export function CasesSection() {
+  const open = useLeadStore((s) => s.open);
+
   return (
     <Section id="cases" className="bg-muted/30">
       <SectionHeading
         eyebrow="Блок 9 · Кейсы"
         title="Наши результаты"
-        subtitle="Первые проекты с реальными цифрами. Показываем честные метрики «до» и «после» — без обещаний «×10 за неделю»."
+        subtitle="Мы честны: первые проекты ещё в работе. Поэтому сейчас мы набираем стартовую группу — и ваш объект может стать одним из первых кейсов DAGSTAY."
       />
 
-      <div className="mt-10 flex flex-wrap justify-center gap-2">
-        <Badge variant="secondary" className="gap-1.5">
-          <Sparkles className="size-3 text-gold-foreground" />
-          Первые проекты
-        </Badge>
-        <Badge variant="outline" className="gap-1.5">
-          <MapPin className="size-3 text-brand" />
-          Дагестан
-        </Badge>
-      </div>
+      {/* Заглушка-плейсхолдер */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative mt-12 overflow-hidden rounded-3xl border border-dashed border-brand/30 bg-card p-8 sm:p-12"
+      >
+        {/* Декоративные пятна */}
+        <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-brand/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -left-20 size-64 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {CASES.map((c, i) => (
-          <motion.div
-            key={c.name}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-          >
-            <Card className="flex h-full flex-col overflow-hidden border-border/70 transition-all hover:-translate-y-1 hover:shadow-xl">
-              <CardContent className="flex h-full flex-col gap-5 p-6">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">
-                    {c.name}
+        <div className="relative flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-10">
+          {/* Большая цифра 5 */}
+          <div className="flex shrink-0 flex-col items-center justify-center gap-2">
+            <div className="relative flex size-32 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand/70 shadow-xl shadow-brand/20 sm:size-40">
+              <span className="text-6xl font-extrabold leading-none text-brand-foreground sm:text-7xl">
+                5
+              </span>
+              <span className="absolute -right-2 -top-2 flex size-9 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-lg">
+                <Sparkles className="size-4" />
+              </span>
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+              мест всего
+            </span>
+          </div>
+
+          {/* Текстовые пункты */}
+          <div className="flex flex-1 flex-col gap-5">
+            {POINTS.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: i * 0.12, ease: "easeOut" }}
+                className="flex items-start gap-4"
+              >
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+                  <p.icon className="size-5" />
+                </span>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                    {p.title}
                   </h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{c.type}</p>
-                </div>
-
-                {/* До / После */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl bg-muted/70 p-4 text-center">
-                    <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      До
-                    </p>
-                    <p className="mt-1 text-2xl font-extrabold text-foreground">
-                      {c.before.value}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {c.before.label}
-                    </p>
-                  </div>
-                  <div className="rounded-xl bg-brand/10 p-4 text-center">
-                    <p className="text-xs font-medium uppercase tracking-wider text-brand">
-                      После
-                    </p>
-                    <p className="mt-1 text-2xl font-extrabold text-brand">
-                      {c.after.value}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {c.after.label}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex-1">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Что сделали
-                  </p>
-                  <ul className="space-y-1.5">
-                    {c.done.map((d) => (
-                      <li
-                        key={d}
-                        className="flex items-start gap-2 text-sm text-foreground"
-                      >
-                        <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-brand" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-lg border border-brand/20 bg-brand/5 p-3">
-                  <p className="text-sm font-semibold text-foreground">
-                    {c.result}
+                  <p className="text-sm text-muted-foreground sm:text-base">
+                    {p.text}
                   </p>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
+              </motion.div>
+            ))}
 
-      <div className="mt-12 flex flex-col items-center gap-4 text-center">
+            <div className="mt-2">
+              <Button
+                size="lg"
+                onClick={() => open("final", { title: "Стать одним из 5 объектов" })}
+                className="group h-12 bg-brand px-7 text-base font-semibold text-brand-foreground shadow-lg shadow-brand/20 hover:bg-brand/90"
+              >
+                Подать заявку на аудит
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="mt-10 flex flex-col items-center gap-4 text-center">
         <p className="max-w-xl text-balance text-lg font-medium text-foreground">
-          Хотите такой же результат для своего объекта?
+          Хотите, чтобы ваш объект вошёл в первую пятёрку?
         </p>
-        <CtaButton
-          source="final"
-          label="Получить бесплатный аудит"
-          className="h-12 px-7 text-base"
-        />
+        <p className="max-w-md text-sm text-muted-foreground">
+          Оставьте заявку — расскажем условия и пришлём бесплатный аудит в
+          течение двух часов.
+        </p>
       </div>
     </Section>
   );
