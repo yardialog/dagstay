@@ -35,6 +35,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // На тёмном hero (без скролла) — светлый текст; на светлом фоне (после скролла) — тёмный
+  const onDark = !scrolled;
+
   return (
     <header
       className={cn(
@@ -51,10 +54,20 @@ export function Header() {
             <Mountain className="size-5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="text-lg font-extrabold tracking-tight text-foreground">
-              DAG<span className="text-brand">STAY</span>
+            <span
+              className={cn(
+                "text-lg font-extrabold tracking-tight transition-colors",
+                onDark ? "text-white" : "text-foreground"
+              )}
+            >
+              DAG<span className="text-gold">STAY</span>
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+            <span
+              className={cn(
+                "text-[10px] font-medium uppercase tracking-wider transition-colors",
+                onDark ? "text-white/70" : "text-muted-foreground"
+              )}
+            >
               Туризм Дагестана
             </span>
           </span>
@@ -66,7 +79,12 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className={cn(
+                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                onDark
+                  ? "text-white/80 hover:bg-white/10 hover:text-white"
+                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+              )}
             >
               {l.label}
             </a>
@@ -77,7 +95,7 @@ export function Header() {
           <Button
             size="sm"
             onClick={() => open("hero")}
-            className="hidden bg-brand text-brand-foreground hover:bg-brand/90 sm:inline-flex"
+            className="hidden bg-gold text-gold-foreground shadow-lg shadow-black/20 hover:bg-gold/90 sm:inline-flex"
           >
             Бесплатный аудит
           </Button>
@@ -88,7 +106,12 @@ export function Header() {
               <Button
                 variant="outline"
                 size="icon"
-                className="lg:hidden"
+                className={cn(
+                  "lg:hidden",
+                  onDark
+                    ? "border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 hover:text-white"
+                    : ""
+                )}
                 aria-label="Открыть меню"
               >
                 <Menu className="size-5" />
