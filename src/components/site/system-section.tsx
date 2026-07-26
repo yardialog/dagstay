@@ -69,9 +69,6 @@ export function SystemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: "easeOut" }}
-            className={
-              i === 5 ? "md:col-span-2 lg:col-span-1" : ""
-            }
           >
             <Card className="group relative h-full overflow-hidden border-border/70 transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5">
               <CardContent className="flex h-full flex-col gap-4 p-6">
