@@ -10,7 +10,12 @@ const MONTHS = [
     title: "Первый месяц",
     theme: "Создаём фундамент",
     icon: LayoutGrid,
-    items: ["Сайт", "Аналитика", "Приём заявок"],
+    items: [
+      "Сайт",
+      "Аналитика",
+      "Приём заявок",
+      "Внедрение TravelLine/Bnovo/Uhotels",
+    ],
     accent: "from-brand/15 to-brand/5",
   },
   {
