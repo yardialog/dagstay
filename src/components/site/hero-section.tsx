@@ -19,18 +19,18 @@ export function HeroSection() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden"
     >
-      {/* Фоновое изображение гор Дагестана с затемнением ~40% */}
+      {/* Фоновое изображение Гуниба, Дагестан */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-mountains.png"
-          alt="Горы Дагестана на закате"
+          src="/hero-gunib.png"
+          alt="Село Гуниб, Дагестан — горное плато и ущелье на закате"
           className="size-full object-cover"
           fetchPriority="high"
         />
-        {/* Затемнение 40% + вертикальный градиент для читаемости текста */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        {/* Равномерное затемнение ~45% для читаемости текста, без размытия границы */}
+        <div className="absolute inset-0 bg-black/45" />
+        {/* Лёгкий боковой градиент только для акцента на тексте слева */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
@@ -127,8 +127,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Декоративный «съезд» внизу для плавного перехода к следующей секции */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
