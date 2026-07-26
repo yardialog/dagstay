@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { useLeadStore } from "@/lib/lead-store";
 
 const ADVANTAGES = [
-  "Современный сайт, который удобно открывать с телефона",
-  "Настраиваем поток прямых заявок из Яндекса и VK",
-  "Автоматизируем обработку заявок 24/7",
+  "Больше гостей",
+  "Меньше комиссий",
+  "Полный контроль",
 ];
 
 export function HeroSection() {
@@ -19,18 +19,17 @@ export function HeroSection() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden"
     >
-      {/* Фоновое изображение Гуниба, Дагестан */}
+      {/* Фоновое изображение — природа Дагестана */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-gunib.png"
-          alt="Село Гуниб, Дагестан — горное плато и ущелье на закате"
+          src="/hero-custom.jpg"
+          alt="Природа Дагестана — горные склоны и ущелья"
           className="size-full object-cover"
           fetchPriority="high"
         />
-        {/* Равномерное затемнение ~45% для читаемости текста, без размытия границы */}
-        <div className="absolute inset-0 bg-black/45" />
-        {/* Лёгкий боковой градиент только для акцента на тексте слева */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/45 to-transparent" />
+        {/* Усиленное затемнение для читаемости на детализированном фото */}
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
@@ -50,7 +49,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
-            className="max-w-4xl text-balance text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md sm:text-4xl md:text-5xl lg:text-[3.5rem]"
+            className="max-w-4xl text-balance text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)] sm:text-4xl md:text-5xl lg:text-[3.5rem]"
           >
             Увеличиваем прямые бронирования для отелей, гостевых домов и
             глэмпингов Дагестана
@@ -60,13 +59,13 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
-            className="max-w-2xl space-y-2 text-pretty text-base text-white/90 sm:text-lg"
+            className="max-w-2xl space-y-2 text-pretty text-base text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-lg"
           >
             <p>
               Помогаем получать больше гостей напрямую, снижать зависимость от
               агрегаторов и автоматизировать работу с заявками.
             </p>
-            <p className="text-white/80">
+            <p className="text-white/85">
               Создаём систему под ключ: современный сайт, реклама, AI-помощник,
               CRM и аналитика.
             </p>
@@ -99,7 +98,7 @@ export function HeroSection() {
                 </a>
               </Button>
             </div>
-            <p className="max-w-md text-sm text-white/75">
+            <p className="max-w-md text-sm text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
               За 15 минут покажем, где вы теряете гостей и какие изменения
               быстрее всего увеличат количество прямых бронирований.
             </p>
@@ -115,7 +114,7 @@ export function HeroSection() {
             {ADVANTAGES.map((a) => (
               <li
                 key={a}
-                className="flex items-center gap-2.5 text-sm text-white/95 sm:text-base"
+                className="flex items-center gap-2.5 text-base font-semibold text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] sm:text-lg"
               >
                 <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-brand">
                   <Check className="size-3.5 text-brand-foreground" strokeWidth={3} />
