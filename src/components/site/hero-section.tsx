@@ -79,18 +79,18 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
               className="max-w-3xl text-balance text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
             >
-              Каждый третий гость уходит, потому что вы не ответили ночью. А
-              агрегаторы забирают до 20% вашей выручки.
+              Верните эти деньги и бронирования с помощью системы, которая
+              работает 24/7 без комиссий.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
-              className="max-w-2xl text-pretty text-lg text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-xl"
+              className="max-w-2xl text-pretty text-base text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-lg"
             >
-              Верните эти деньги и бронирования с помощью системы, которая
-              работает 24/7 без комиссий.
+              Каждый третий гость уходит, потому что вы не ответили ночью. А
+              агрегаторы забирают до 20% вашей выручки.
             </motion.p>
 
             <motion.div
