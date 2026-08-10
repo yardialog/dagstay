@@ -87,16 +87,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
-              className="max-w-2xl space-y-2 text-pretty text-base text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-lg"
+              className="max-w-2xl text-pretty text-base text-white/85 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-lg"
             >
-              <p>
-                Помогаем получать больше гостей напрямую, снижать зависимость от
-                агрегаторов и автоматизировать работу с заявками.
-              </p>
-              <p className="text-white/85">
-                Система под ключ: сайт, реклама, букинг, AI-помощник, CRM и
-                аналитика.
-              </p>
+              Система под ключ: сайт, реклама, букинг, AI-помощник, CRM и
+              аналитика.
             </motion.div>
 
             <motion.div
