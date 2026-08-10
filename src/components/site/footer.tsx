@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li>
                 <a
-                  href="#"
+                  href="/privacy"
                   className="group flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-brand"
                 >
                   <span className="flex size-8 items-center justify-center rounded-lg bg-muted text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
@@ -117,7 +117,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/terms"
                   className="group flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-brand"
                 >
                   <span className="flex size-8 items-center justify-center rounded-lg bg-muted text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
