@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Award,
   MapPinned,
@@ -29,34 +30,35 @@ const REASONS = [
 
 export function WhyDagstaySection() {
   return (
-    <Section id="why" style={{ background: "var(--bg)" }}>
+    <Section id="why" className="bg-background">
       <SectionHeading
-        eyebrow="08 — Почему DAGSTAY"
+        eyebrow="Блок 8 · О нас"
         title="Почему владельцы объектов работают с нами"
         subtitle="Мы не агентство «всё подряд». Мы — узкий подрядчик, который отвечает за прямые бронирования туристических объектов Дагестана."
       />
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {REASONS.map((r) => (
-          <div
+        {REASONS.map((r, i) => (
+          <motion.div
             key={r.title}
-            className="notch-corner info-card flex items-start gap-4 p-5 transition-transform hover:-translate-y-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: i * 0.05, ease: "easeOut" }}
+            className="group relative flex items-start gap-4 rounded-xl border border-border/70 bg-card p-5 transition-all hover:border-brand/40 hover:bg-brand/[0.03] hover:shadow-md"
           >
-            <span className="flex size-10 shrink-0 items-center justify-center bg-[var(--accent)] text-black">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
               <r.icon className="size-5" />
             </span>
             <div className="flex flex-col">
-              <span
-                className="text-base font-semibold leading-tight"
-                style={{ color: "var(--fg)" }}
-              >
+              <span className="text-base font-semibold leading-tight text-foreground">
                 {r.title}
               </span>
-              <span className="mt-0.5 text-sm" style={{ color: "var(--muted)" }}>
+              <span className="mt-0.5 text-sm text-muted-foreground">
                 {r.text}
               </span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </Section>

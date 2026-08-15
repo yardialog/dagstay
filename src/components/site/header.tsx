@@ -1,6 +1,8 @@
 "use client";
 
-import { Mountain } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, Mountain } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -11,6 +13,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { useLeadStore } from "@/lib/lead-store";
+import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#problems", label: "Проблемы" },
@@ -22,21 +25,49 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
   const open = useLeadStore((s) => s.open);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // На тёмном hero (без скролла) — светлый текст; на светлом фоне (после скролла) — тёмный
+  const onDark = !scrolled;
+
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-black/50 backdrop-blur-md transition-all duration-300">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-40 transition-all duration-300",
+        scrolled
+          ? "border-b border-border/60 bg-background/85 backdrop-blur-xl"
+          : "bg-transparent"
+      )}
+    >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="#top" className="group flex items-center gap-2.5">
-          <span className="flex size-9 items-center justify-center bg-[var(--accent)] text-black">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-brand text-brand-foreground shadow-sm transition-transform group-hover:scale-105">
             <Mountain className="size-5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-xl tracking-wide" style={{ color: "var(--fg)" }}>
-              DAGSTAY
+            <span
+              className={cn(
+                "text-lg font-extrabold tracking-tight transition-colors",
+                onDark ? "text-white" : "text-foreground"
+              )}
+            >
+              DAG<span className="text-gold">STAY</span>
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--muted)" }}>
+            <span
+              className={cn(
+                "text-[10px] font-medium uppercase tracking-wider transition-colors",
+                onDark ? "text-white/70" : "text-muted-foreground"
+              )}
+            >
               Туризм Дагестана
             </span>
           </span>
@@ -48,10 +79,12 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="font-heading relative px-3 py-2 text-[0.85rem] uppercase tracking-[0.18em] text-[var(--fg-dim)] transition-colors hover:text-[var(--fg)]"
-              style={{
-                // accent dot on hover via CSS
-              }}
+              className={cn(
+                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                onDark
+                  ? "text-white/80 hover:bg-white/10 hover:text-white"
+                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+              )}
             >
               {l.label}
             </a>
@@ -59,45 +92,38 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* Location indicator */}
-          <span className="mr-2 hidden items-center gap-1.5 sm:flex">
-            <span className="inline-block size-1.5 rounded-full bg-[var(--accent)]" />
-            <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: "var(--muted)" }}>
-              Дагестан
-            </span>
-          </span>
-
-          <button
+          <Button
+            size="sm"
             onClick={() => open("hero")}
-            className="hidden font-heading text-sm uppercase tracking-wider bg-[var(--silver)] text-black px-4 py-2 transition-colors hover:bg-[var(--fg)] sm:inline-flex"
+            className="hidden bg-gold text-gold-foreground shadow-lg shadow-black/20 hover:bg-gold/90 sm:inline-flex"
           >
             Бесплатный аудит
-          </button>
+          </Button>
 
           {/* Mobile menu */}
           <Sheet>
             <SheetTrigger asChild>
-              <button
-                className="inline-flex size-10 items-center justify-center border border-[var(--border-light)] text-[var(--fg)] lg:hidden"
+              <Button
+                variant="outline"
+                size="icon"
+                className={cn(
+                  "lg:hidden",
+                  onDark
+                    ? "border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 hover:text-white"
+                    : ""
+                )}
                 aria-label="Открыть меню"
               >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <line x1="3" y1="5" x2="17" y2="5" />
-                  <line x1="3" y1="10" x2="17" y2="10" />
-                  <line x1="3" y1="15" x2="17" y2="15" />
-                </svg>
-              </button>
+                <Menu className="size-5" />
+              </Button>
             </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-full max-w-xs border-[var(--border)] bg-[var(--bg-darker)]"
-            >
+            <SheetContent side="right" className="w-full max-w-xs">
               <SheetHeader>
-                <SheetTitle className="flex items-center gap-2 text-left" style={{ color: "var(--fg)" }}>
-                  <span className="flex size-8 items-center justify-center bg-[var(--accent)] text-black">
+                <SheetTitle className="flex items-center gap-2 text-left">
+                  <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-brand-foreground">
                     <Mountain className="size-4" />
                   </span>
-                  <span className="font-display text-lg">DAGSTAY</span>
+                  DAGSTAY
                 </SheetTitle>
                 <SheetDescription className="sr-only">
                   Навигация по разделам лендинга DAGSTAY
@@ -108,7 +134,7 @@ export function Header() {
                   <SheetClose asChild key={l.href}>
                     <a
                       href={l.href}
-                      className="font-heading px-3 py-2.5 text-base uppercase tracking-wider text-[var(--fg-dim)] transition-colors hover:text-[var(--accent)]"
+                      className="rounded-md px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-accent"
                     >
                       {l.label}
                     </a>
@@ -116,12 +142,12 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-6 flex flex-col gap-2">
-                <button
-                  className="w-full bg-[var(--accent)] py-3 text-sm font-semibold uppercase tracking-wider text-black transition-colors hover:bg-[var(--accent-bright)]"
+                <Button
+                  className="w-full bg-brand text-brand-foreground hover:bg-brand/90"
                   onClick={() => open("hero")}
                 >
                   Бесплатный аудит
-                </button>
+                </Button>
               </div>
             </SheetContent>
           </Sheet>

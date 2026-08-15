@@ -1,7 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Check, Star, RefreshCw } from "lucide-react";
 import { Section, SectionHeading } from "./section-primitives";
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const TIERS = [
   {
@@ -44,59 +47,81 @@ const TIERS = [
 
 export function SupportSection() {
   return (
-    <Section id="support" style={{ background: "var(--bg)" }}>
+    <Section id="support" className="bg-background">
       <SectionHeading
-        eyebrow="06 — Сопровождение"
+        eyebrow="Блок 6 · Сопровождение"
         title="После запуска продолжаем развивать ваш объект"
         subtitle="Запуск — это только начало. Ежемесячное сопровождение помогает расти, тестировать гипотезы и удерживать стабильный поток прямых бронирований."
       />
 
       <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {TIERS.map((tier) => (
-          <div
+        {TIERS.map((tier, i) => (
+          <motion.div
             key={tier.id}
-            className={`info-card relative flex h-full flex-col gap-5 p-6 sm:p-7 ${
-              tier.popular ? "border-[var(--accent-dim)]" : ""
-            }`}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.45, delay: i * 0.08, ease: "easeOut" }}
           >
-            {tier.popular && (
-              <div className="absolute right-4 top-4">
-                <span className="font-mono inline-flex items-center gap-1 bg-[var(--gold)] px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-black">
-                  <Star className="size-3 fill-current" />
-                  Оптимальный
-                </span>
-              </div>
-            )}
-            <div>
-              <h3 className="font-heading text-xl font-bold uppercase tracking-wide" style={{ color: "var(--fg)" }}>
-                {tier.name}
-              </h3>
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="font-display text-4xl tracking-tight" style={{ color: "var(--fg)" }}>
-                  {tier.price}
-                </span>
-                <span className="font-heading text-base font-semibold" style={{ color: "var(--muted)" }}>
-                  ₽ / мес
-                </span>
-              </div>
-            </div>
-
-            <ul className="flex-1 space-y-2.5">
-              {tier.features.map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "var(--fg-dim)" }}>
-                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center bg-[var(--accent)] text-black">
-                    <Check className="size-3" strokeWidth={3} />
+            <Card
+              className={cn(
+                "relative h-full overflow-hidden border transition-all",
+                tier.popular
+                  ? "border-brand/50 shadow-xl shadow-brand/10"
+                  : "border-border/70 hover:border-brand/30"
+              )}
+            >
+              {tier.popular && (
+                <div className="absolute right-4 top-4">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-gold/20 px-2.5 py-1 text-xs font-bold text-gold-foreground">
+                    <Star className="size-3 fill-current" />
+                    Оптимальный
                   </span>
-                  <span className="leading-snug">{f}</span>
-                </li>
-              ))}
-            </ul>
+                </div>
+              )}
+              <CardContent className="flex h-full flex-col gap-5 p-6 sm:p-7">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">
+                    {tier.name}
+                  </h3>
+                  <div className="mt-2 flex items-baseline gap-1">
+                    <span className="text-3xl font-extrabold tracking-tight text-foreground">
+                      {tier.price}
+                    </span>
+                    <span className="text-lg font-semibold text-muted-foreground">
+                      ₽ / мес
+                    </span>
+                  </div>
+                </div>
 
-            <div className="flex items-center gap-2 font-mono text-xs" style={{ color: "var(--muted)" }}>
-              <RefreshCw className="size-3.5" />
-              Ежемесячное продление
-            </div>
-          </div>
+                <ul className="flex-1 space-y-2.5">
+                  {tier.features.map((f) => (
+                    <li
+                      key={f}
+                      className="flex items-start gap-2.5 text-sm text-foreground"
+                    >
+                      <span
+                        className={cn(
+                          "mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full",
+                          tier.popular
+                            ? "bg-brand text-brand-foreground"
+                            : "bg-brand/15 text-brand"
+                        )}
+                      >
+                        <Check className="size-3" strokeWidth={3} />
+                      </span>
+                      <span className="leading-snug">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <RefreshCw className="size-3.5" />
+                  Ежемесячное продление
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </Section>

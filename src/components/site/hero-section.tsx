@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Sparkles,
   LayoutGrid,
   Users,
   TrendingDown,
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useLeadStore } from "@/lib/lead-store";
 
 type Advantage = {
@@ -35,52 +37,38 @@ const ADVANTAGES: Advantage[] = [
   },
 ];
 
-const MARQUEE_ITEMS = [
-  "ПРЯМЫЕ БРОНИРОВАНИЯ",
-  "БЕЗ КОМИССИЙ",
-  "AI-ПОМОЩНИК 24/7",
-  "CRM СИСТЕМА",
-  "АНАЛИТИКА",
-  "ЯНДЕКС ДИРЕКТ",
-  "VK РЕКЛАМА",
-  "БЕСПЛАТНЫЙ АУДИТ",
-];
-
 export function HeroSection() {
   const open = useLeadStore((s) => s.open);
 
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] w-full flex-col justify-end overflow-hidden"
+      className="relative isolate flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden"
     >
-      {/* Background image with noir filter + Ken Burns */}
+      {/* Фоновое изображение — природа Дагестана */}
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-custom.jpg"
           alt="Природа Дагестана — горные склоны и ущелья"
-          className="hero-kenburns size-full object-cover"
+          className="size-full object-cover"
           fetchPriority="high"
         />
+        {/* Усиленное затемнение для читаемости на детализированном фото */}
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
       </div>
 
-      {/* Hero overlay — complex multi-layer gradients */}
-      <div className="hero-overlay z-[1]" />
-
-      {/* Scan lines */}
-      <div className="scan-line z-[2]" />
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 pt-28 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left column — offer */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-28 pb-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Левая колонка — офер */}
           <div className="flex flex-col items-start gap-6 lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="font-mono inline-flex items-center gap-2 border border-[var(--border-light)] bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[var(--accent)] backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md">
+                <Sparkles className="size-3.5 text-gold" />
                 Прямые бронирования для туризма Дагестана
               </span>
             </motion.div>
@@ -89,26 +77,26 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
-              className="max-w-3xl leading-[0.95]"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(3rem, 8.5vw, 7rem)" }}
+              className="max-w-3xl text-balance text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
             >
-              <span className="block" style={{ color: "var(--fg)" }}>Увеличиваем</span>
-              <span className="text-stroke block">прямые бронирования</span>
-              <span className="block">
-                для{" "}
-                <span style={{ color: "var(--accent)" }}>Дагестана</span>
-              </span>
+              Увеличиваем прямые бронирования для отелей, гостевых домов и
+              глэмпингов Дагестана
             </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
-              className="max-w-2xl text-pretty text-base sm:text-lg"
-              style={{ color: "var(--fg-dim)" }}
+              className="max-w-2xl space-y-2 text-pretty text-base text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-lg"
             >
-              Система под ключ: сайт, реклама, букинг, AI-помощник, CRM и
-              аналитика.
+              <p>
+                Помогаем получать больше гостей напрямую, снижать зависимость от
+                агрегаторов и автоматизировать работу с заявками.
+              </p>
+              <p className="text-white/85">
+                Система под ключ: сайт, реклама, букинг, AI-помощник, CRM и
+                аналитика.
+              </p>
             </motion.div>
 
             <motion.div
@@ -118,55 +106,53 @@ export function HeroSection() {
               className="flex w-full flex-col gap-4"
             >
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-                <button
+                <Button
+                  size="lg"
                   onClick={() => open("hero")}
-                  className="pulse-btn group flex h-12 w-full items-center justify-center gap-2 bg-[var(--gold)] px-7 text-base font-semibold text-black transition-all hover:brightness-110 sm:w-auto"
-                  style={{ fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
+                  className="group h-12 w-full bg-gold px-7 text-base font-semibold text-gold-foreground shadow-xl shadow-black/30 transition-all hover:bg-gold/90 hover:shadow-gold/30 sm:w-auto"
                 >
-                  Получить бесплатный аудит
+                  Получить бесплатный аудит объекта
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </button>
-                <a
-                  href="#packages"
-                  className="group flex h-12 w-full items-center justify-center gap-2 border border-[var(--border-light)] px-7 text-base font-semibold text-[var(--fg-dim)] backdrop-blur-md transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] sm:w-auto"
-                  style={{ fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
+                </Button>
+                <Button
+                  size="lg"
+                  asChild
+                  variant="outline"
+                  className="group h-12 w-full border-white/30 bg-white/10 px-7 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:text-white sm:w-auto"
                 >
-                  <LayoutGrid className="size-4" />
-                  Смотреть пакеты
-                </a>
+                  <a href="#packages">
+                    <LayoutGrid className="size-4" />
+                    Смотреть пакеты
+                  </a>
+                </Button>
               </div>
-              <p className="max-w-md text-sm" style={{ color: "var(--fg-dim)" }}>
+              <p className="max-w-md text-sm text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
                 За 15 минут покажем, где вы теряете гостей и какие изменения
                 быстрее всего увеличат количество прямых бронирований.
               </p>
             </motion.div>
           </div>
 
-          {/* Right column — advantage cards with notch corners */}
+          {/* Правая колонка — преимущества в рамках с иконками */}
           <motion.ul
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.32, ease: "easeOut" }}
-            className="mb-4 flex w-full flex-col gap-3 lg:col-span-5"
+            className="flex w-full flex-col gap-3 lg:col-span-5"
           >
             {ADVANTAGES.map(({ title, subtitle, icon: Icon }) => (
               <li
                 key={title}
-                className="notch-corner info-card flex items-center gap-4 p-4 sm:p-5"
+                className="group flex items-center gap-4 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-md transition-colors hover:border-gold/50 hover:bg-white/15 sm:p-5"
               >
-                <span
-                  className="flex size-10 shrink-0 items-center justify-center bg-[var(--accent)] text-black"
-                >
-                  <Icon className="size-5" strokeWidth={2} />
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand to-brand/80 shadow-lg shadow-black/20 ring-1 ring-white/10">
+                  <Icon className="size-6 text-brand-foreground" strokeWidth={2.25} />
                 </span>
                 <span className="flex flex-col">
-                  <span
-                    className="text-base font-semibold sm:text-lg"
-                    style={{ fontFamily: "'Oswald', sans-serif", color: "var(--fg)", textTransform: "uppercase", letterSpacing: "0.04em" }}
-                  >
+                  <span className="text-base font-bold text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] sm:text-lg">
                     {title}
                   </span>
-                  <span className="text-sm" style={{ color: "var(--muted)" }}>
+                  <span className="text-sm text-white/80 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
                     {subtitle}
                   </span>
                 </span>
@@ -174,34 +160,8 @@ export function HeroSection() {
             ))}
           </motion.ul>
         </div>
-
-        {/* Bottom strip: progress bar + label */}
-        <div className="mt-8 flex items-center gap-4">
-          <div className="progress-bar flex-1">
-            <div className="progress-bar-fill" style={{ width: "72%" }} />
-          </div>
-          <span className="font-mono flex items-center gap-2 text-xs uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>
-            <span className="rec-dot inline-block size-1.5 rounded-full bg-[var(--accent)]" />
-            DAGSTAY REEL
-          </span>
-        </div>
       </div>
 
-      {/* Marquee ticker at very bottom */}
-      <div className="relative z-10 border-t border-white/5 bg-[var(--bg-darker)] py-3 overflow-hidden">
-        <div className="marquee-track">
-          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
-            <span
-              key={i}
-              className="font-mono whitespace-nowrap px-6 text-xs uppercase tracking-[0.2em]"
-              style={{ color: "var(--muted)" }}
-            >
-              {item}
-              <span className="ml-6" style={{ color: "var(--accent)" }}>◆</span>
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

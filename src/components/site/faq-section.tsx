@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Section, SectionHeading } from "./section-primitives";
+import { HelpCircle } from "lucide-react";
 
 const FAQ = [
   {
@@ -45,9 +46,9 @@ const FAQ = [
 
 export function FaqSection() {
   return (
-    <Section id="faq" style={{ background: "var(--bg)" }}>
+    <Section id="faq" className="bg-background">
       <SectionHeading
-        eyebrow="10 — FAQ"
+        eyebrow="Блок 10 · FAQ"
         title="Частые вопросы"
         subtitle="Собрали то, что чаще всего спрашивают владельцы отелей и глэмпингов на первом звонке. Не нашли свой вопрос — задайте его в форме заявки."
       />
@@ -63,25 +64,16 @@ export function FaqSection() {
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="border border-[var(--border)] bg-[var(--bg-card)] px-5 transition-colors data-[state=open]:border-[var(--accent-dim)] data-[state=open]:bg-[var(--bg-card-hover)]"
-              style={{ borderRadius: "0" }}
+              className="overflow-hidden rounded-xl border border-border/70 bg-card px-5 transition-colors data-[state=open]:border-brand/40 data-[state=open]:bg-brand/[0.02]"
             >
-              <AccordionTrigger
-                className="py-5 text-left hover:no-underline"
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  color: "var(--fg)",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase" as const,
-                }}
-              >
-                {item.q}
+              <AccordionTrigger className="gap-4 py-5 text-left text-base font-semibold text-foreground hover:no-underline">
+                <span className="flex items-start gap-3">
+                  <HelpCircle className="mt-0.5 size-5 shrink-0 text-brand" />
+                  {item.q}
+                </span>
               </AccordionTrigger>
-              <AccordionContent
-                className="pb-5 text-sm leading-relaxed sm:text-base"
-                style={{ color: "var(--fg-dim)" }}
-              >
-                {item.a}
+              <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <span className="pl-8">{item.a}</span>
               </AccordionContent>
             </AccordionItem>
           ))}
