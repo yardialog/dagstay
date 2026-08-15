@@ -1,13 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import { TrendingDown, Calculator, ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "./section-primitives";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import { useLeadStore } from "@/lib/lead-store";
 
 /** Средняя комиссия агрегаторов (Booking, Ostrovok, Суточно и т.п.) ~18% */
@@ -50,29 +45,23 @@ export function CalculatorSection() {
   return (
     <Section
       id="calculator"
-      className="bg-gradient-to-b from-muted/40 to-background"
+      style={{ background: "var(--bg-darker)" }}
     >
       <SectionHeading
-        eyebrow="Блок 3 · Калькулятор потерь"
+        eyebrow="03 — Калькулятор"
         title="Сколько денег вы оставляете агрегаторам?"
         subtitle="Двигайте ползунки и оцените, сколько объект ежемесячно платит посредникам. Расчёт ведём по средней комиссии агрегаторов 18%."
       />
 
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-5">
         {/* Ввод данных */}
-        <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="lg:col-span-3"
-        >
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <div className="lg:col-span-3">
+          <div className="info-card p-6 sm:p-8">
             <div className="mb-6 flex items-center gap-3">
-              <span className="flex size-10 items-center justify-center rounded-lg bg-brand/10 text-brand">
+              <span className="flex size-10 items-center justify-center bg-[var(--accent)] text-black">
                 <Calculator className="size-5" />
               </span>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="font-heading text-lg font-semibold uppercase tracking-wide" style={{ color: "var(--fg)" }}>
                 Параметры объекта
               </h3>
             </div>
@@ -81,135 +70,110 @@ export function CalculatorSection() {
               {/* Средняя стоимость */}
               <div className="space-y-2">
                 <div className="flex items-baseline justify-between">
-                  <Label className="text-sm font-medium">
+                  <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
                     Средняя стоимость проживания
-                  </Label>
-                  <span className="text-sm font-semibold text-brand">
+                  </label>
+                  <span className="font-mono text-sm" style={{ color: "var(--accent)" }}>
                     {formatRub(avgPrice)} ₽ / сутки
                   </span>
                 </div>
-                <Input
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  step={100}
-                  value={avgPrice}
-                  onChange={(e) =>
-                    setAvgPrice(Math.max(0, Number(e.target.value) || 0))
-                  }
-                  className="h-11"
-                  aria-label="Средняя стоимость проживания в рублях"
-                />
-                <Slider
-                  value={[Math.min(avgPrice, 20000)]}
+                <input
+                  type="range"
                   min={500}
                   max={20000}
                   step={500}
-                  onValueChange={(v) => setAvgPrice(v[0])}
-                  aria-label="Стоимость ползунок"
+                  value={avgPrice}
+                  onChange={(e) => setAvgPrice(Number(e.target.value))}
+                  className="w-full accent-[var(--accent)]"
+                  aria-label="Средняя стоимость проживания"
                 />
               </div>
 
               {/* Количество бронирований */}
               <div className="space-y-2">
                 <div className="flex items-baseline justify-between">
-                  <Label className="text-sm font-medium">
+                  <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
                     Количество бронирований в месяц
-                  </Label>
-                  <span className="text-sm font-semibold text-brand">
+                  </label>
+                  <span className="font-mono text-sm" style={{ color: "var(--accent)" }}>
                     {bookings} / мес
                   </span>
                 </div>
-                <Input
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  step={1}
-                  value={bookings}
-                  onChange={(e) =>
-                    setBookings(Math.max(0, Number(e.target.value) || 0))
-                  }
-                  className="h-11"
-                  aria-label="Количество бронирований в месяц"
-                />
-                <Slider
-                  value={[Math.min(bookings, 200)]}
+                <input
+                  type="range"
                   min={1}
                   max={200}
                   step={1}
-                  onValueChange={(v) => setBookings(v[0])}
-                  aria-label="Бронирования ползунок"
+                  value={bookings}
+                  onChange={(e) => setBookings(Number(e.target.value))}
+                  className="w-full accent-[var(--accent)]"
+                  aria-label="Количество бронирований"
                 />
               </div>
 
               {/* Доля агрегаторов */}
               <div className="space-y-2">
                 <div className="flex items-baseline justify-between">
-                  <Label className="text-sm font-medium">
-                    Доля бронирований через агрегаторы
-                  </Label>
-                  <span className="text-sm font-semibold text-brand">
+                  <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+                    Доля через агрегаторы
+                  </label>
+                  <span className="font-mono text-sm" style={{ color: "var(--accent)" }}>
                     {share}%
                   </span>
                 </div>
-                <Slider
-                  value={[share]}
+                <input
+                  type="range"
                   min={0}
                   max={100}
                   step={5}
-                  onValueChange={(v) => setShare(v[0])}
+                  value={share}
+                  onChange={(e) => setShare(Number(e.target.value))}
+                  className="w-full accent-[var(--accent)]"
                   aria-label="Доля агрегаторов"
-                  className="py-2"
                 />
-                <div className="flex justify-between text-xs text-muted-foreground">
+                <div className="flex justify-between font-mono text-xs" style={{ color: "var(--muted)" }}>
                   <span>0% — всё напрямую</span>
                   <span>100% — всё через агрегаторов</span>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Результат */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="lg:col-span-2"
-        >
-          <div className="flex h-full flex-col justify-between gap-6 overflow-hidden rounded-2xl border border-brand/20 bg-gradient-to-br from-brand to-brand/80 p-6 text-brand-foreground shadow-xl sm:p-8">
+        <div className="lg:col-span-2">
+          <div className="booking-frame flex h-full flex-col justify-between gap-6 p-6 sm:p-8">
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-brand-foreground/80">
+              <div className="font-mono flex items-center gap-2 text-xs uppercase tracking-[0.15em]" style={{ color: "var(--accent)" }}>
                 <TrendingDown className="size-4" />
                 Комиссия агрегаторам
               </div>
               <div>
-                <p className="text-sm text-brand-foreground/80">
+                <p className="text-sm" style={{ color: "var(--fg-dim)", }}>
                   Вы можете платить агрегаторам около
                 </p>
-                <p className="mt-1 text-4xl font-extrabold tracking-tight sm:text-5xl">
+                <p className="font-display mt-1 number-display" style={{ fontSize: "3rem", color: "var(--accent)" }}>
                   {formatRub(monthlyLoss)} ₽
                 </p>
-                <p className="mt-1 text-sm text-brand-foreground/80">
+                <p className="mt-1 text-sm" style={{ color: "var(--fg-dim)" }}>
                   ежемесячно
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 border-t border-white/15 pt-4">
+              <div className="grid grid-cols-2 gap-3 border-t border-[var(--border)] pt-4">
                 <div>
-                  <p className="text-xs text-brand-foreground/70">
-                    В год это около
+                  <p className="font-mono text-xs uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+                    В год
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="font-heading text-lg font-bold" style={{ color: "var(--fg)" }}>
                     {formatRub(yearlyLoss)} ₽
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-brand-foreground/70">
-                    Бронирований через агрегаторов
+                  <p className="font-mono text-xs uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+                    Через агрегаторов
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="font-heading text-lg font-bold" style={{ color: "var(--fg)" }}>
                     {aggregatorBookings} / мес
                   </p>
                 </div>
@@ -217,21 +181,21 @@ export function CalculatorSection() {
             </div>
 
             <div className="space-y-4">
-              <p className="text-sm text-brand-foreground/90">
+              <p className="text-sm" style={{ color: "var(--fg-dim)" }}>
                 Мы покажем, какую часть этих бронирований реально перевести в
                 прямые продажи.
               </p>
-              <Button
-                size="lg"
+              <button
                 onClick={handleGetCalc}
-                className="group w-full bg-gold text-gold-foreground hover:bg-gold/90 shadow-lg"
+                className="group flex w-full items-center justify-center gap-2 bg-[var(--gold)] py-3 text-sm font-semibold text-black transition-all hover:brightness-110"
+                style={{ fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
               >
-                Получить расчет
+                Получить расчёт
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </Section>
   );

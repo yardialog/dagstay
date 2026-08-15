@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLeadStore, type LeadSource } from "@/lib/lead-store";
-import { Button } from "@/components/ui/button";
 
-/** Открывающая «надбровь» над заголовком секции */
+/** Открывающая «надбровь» в стиле section-marker (JetBrains Mono, accent, line prefix) */
 export function Eyebrow({
   children,
   className,
@@ -14,23 +12,16 @@ export function Eyebrow({
   className?: string;
 }) {
   return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand",
-        className
-      )}
-    >
-      {children}
-    </span>
+    <span className={cn("section-marker", className)}>{children}</span>
   );
 }
 
-/** Заголовок секции с появлением при скролле */
+/** Заголовок секции — IRONFORGE style */
 export function SectionHeading({
   eyebrow,
   title,
   subtitle,
-  align = "center",
+  align = "left",
   className,
 }: {
   eyebrow?: string;
@@ -40,11 +31,7 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <div
       className={cn(
         "flex flex-col gap-4",
         align === "center" ? "items-center text-center" : "items-start text-left",
@@ -52,19 +39,28 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="max-w-3xl text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-[2.75rem] md:leading-[1.1]">
+      <h2
+        className={cn(
+          "font-heading max-w-3xl text-3xl font-semibold tracking-tight uppercase sm:text-4xl md:text-[2.75rem] md:leading-[1.1]",
+          align === "center" && "mx-auto"
+        )}
+        style={{ color: "var(--fg)" }}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
+        <p
+          className="max-w-2xl text-pretty text-base sm:text-lg"
+          style={{ color: "var(--fg-dim)" }}
+        >
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </div>
   );
 }
 
-/** Кнопка CTA, открывающая форму-диалог */
+/** Кнопка CTA — IRONFORGE style */
 export function CtaButton({
   source,
   label = "Получить бесплатный аудит",
@@ -81,24 +77,55 @@ export function CtaButton({
   title?: string;
 }) {
   const open = useLeadStore((s) => s.open);
+
+  const baseClasses =
+    "font-heading uppercase tracking-wider text-sm font-semibold transition-all duration-300";
+
+  if (variant === "default" || source === "hero") {
+    return (
+      <button
+        onClick={() => open(source, title ? { title } : undefined)}
+        className={cn(
+          baseClasses,
+          "bg-[var(--accent)] text-black px-7 py-3 hover:bg-[var(--accent-bright)]",
+          className
+        )}
+      >
+        {label}
+      </button>
+    );
+  }
+
+  if (variant === "outline") {
+    return (
+      <button
+        onClick={() => open(source, title ? { title } : undefined)}
+        className={cn(
+          baseClasses,
+          "border border-[var(--border-light)] px-7 py-3 text-[var(--fg-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)]",
+          className
+        )}
+      >
+        {label}
+      </button>
+    );
+  }
+
   return (
-    <Button
-      size={size}
-      variant={variant}
+    <button
       onClick={() => open(source, title ? { title } : undefined)}
       className={cn(
-        source === "hero" || variant === "default"
-          ? "bg-brand text-brand-foreground hover:bg-brand/90 shadow-lg shadow-brand/20"
-          : "",
+        baseClasses,
+        "bg-[var(--silver)] text-black px-7 py-3 hover:bg-[var(--fg)]",
         className
       )}
     >
       {label}
-    </Button>
+    </button>
   );
 }
 
-/** Стандартный контейнер секции */
+/** Стандартный контейнер секции — с border-t разделителем */
 export function Section({
   id,
   children,
@@ -112,7 +139,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative w-full px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24",
+        "relative w-full border-t border-[var(--border)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24",
         className
       )}
     >

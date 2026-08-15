@@ -12,10 +12,13 @@ import { FaqSection } from "@/components/site/faq-section";
 import { FinalCtaSection } from "@/components/site/final-cta-section";
 import { Footer } from "@/components/site/footer";
 import { LeadDialog } from "@/components/site/lead-dialog";
+import { GrainOverlay } from "@/components/site/grain-overlay";
+import { StickyCtaBar } from "@/components/site/sticky-cta-bar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col">
+      <GrainOverlay />
       <Header />
       <main className="flex-1">
         {/* Блок 1 — Hero */}
@@ -45,6 +48,8 @@ export default function Home() {
       <Footer />
       {/* Глобальная форма-диалог */}
       <LeadDialog />
+      {/* Sticky CTA bar */}
+      <StickyCtaBar />
     </div>
   );
 }

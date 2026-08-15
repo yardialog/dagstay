@@ -7,9 +7,6 @@ import { z } from "zod";
 import { Loader2, CheckCircle2, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -48,15 +45,10 @@ const ROOMS_OPTIONS = [
 ];
 
 type AuditFormProps = {
-  /** источник заявки для аналитики */
   source?: LeadSource;
-  /** вариант отображения: полноширинный (финальная секция) или компактный (диалог) */
   variant?: "full" | "compact";
-  /** текст кнопки */
   submitLabel?: string;
-  /** показать подпись под кнопкой */
   showNote?: boolean;
-  /** колбэк после успешной отправки (например, закрыть диалог) */
   onSuccess?: () => void;
   className?: string;
 };
@@ -127,28 +119,27 @@ export function AuditForm({
     return (
       <div
         className={cn(
-          "flex flex-col items-center justify-center gap-3 rounded-xl border border-brand/20 bg-brand/5 p-8 text-center",
+          "flex flex-col items-center justify-center gap-3 border border-[var(--accent-dim)] bg-[var(--bg-card)] p-8 text-center",
           className
         )}
       >
-        <div className="flex size-14 items-center justify-center rounded-full bg-brand/10">
-          <CheckCircle2 className="size-8 text-brand" />
+        <div className="flex size-14 items-center justify-center bg-[var(--accent)] text-black">
+          <CheckCircle2 className="size-8" />
         </div>
-        <h3 className="text-xl font-semibold text-foreground">
+        <h3 className="font-heading text-xl font-bold uppercase tracking-wide" style={{ color: "var(--fg)" }}>
           Заявка принята!
         </h3>
-        <p className="max-w-sm text-sm text-muted-foreground">
+        <p className="max-w-sm text-sm" style={{ color: "var(--fg-dim)" }}>
           Спасибо! Мы свяжемся с вами в течение двух часов в рабочее время,
           чтобы провести бесплатный аудит вашего объекта.
         </p>
-        <Button
-          variant="outline"
-          size="sm"
-          className="mt-2"
+        <button
+          className="mt-2 border border-[var(--border-light)] px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          style={{ color: "var(--fg-dim)" }}
           onClick={() => setDone(false)}
         >
           Отправить ещё одну заявку
-        </Button>
+        </button>
       </div>
     );
   }
@@ -159,70 +150,70 @@ export function AuditForm({
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={cn(
-        "flex flex-col gap-4",
+        "flex flex-col gap-5",
         isFull && "md:grid md:grid-cols-2 md:gap-4",
         className
       )}
     >
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor={`name-${source}`} className="text-sm font-medium">
-          Имя <span className="text-destructive">*</span>
-        </Label>
-        <Input
-          id={`name-${source}`}
+        <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+          Имя <span style={{ color: "var(--accent)" }}>*</span>
+        </label>
+        <input
+          {...register("name")}
           placeholder="Как к вам обращаться"
           autoComplete="name"
           aria-invalid={!!errors.name}
-          {...register("name")}
+          className="form-input"
         />
         {errors.name && (
-          <span className="text-xs text-destructive">{errors.name.message}</span>
+          <span className="text-xs" style={{ color: "var(--destructive)" }}>{errors.name.message}</span>
         )}
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor={`phone-${source}`} className="text-sm font-medium">
-          Телефон <span className="text-destructive">*</span>
-        </Label>
-        <Input
-          id={`phone-${source}`}
+        <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+          Телефон <span style={{ color: "var(--accent)" }}>*</span>
+        </label>
+        <input
+          {...register("phone")}
           type="tel"
           placeholder="+7 999 000-00-00"
           autoComplete="tel"
           aria-invalid={!!errors.phone}
-          {...register("phone")}
+          className="form-input"
         />
         {errors.phone && (
-          <span className="text-xs text-destructive">
-            {errors.phone.message}
-          </span>
+          <span className="text-xs" style={{ color: "var(--destructive)" }}>{errors.phone.message}</span>
         )}
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor={`tg-${source}`} className="text-sm font-medium">
+        <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
           Telegram
-        </Label>
-        <Input
-          id={`tg-${source}`}
+        </label>
+        <input
+          {...register("telegram")}
           placeholder="@username (необязательно)"
           autoComplete="username"
-          {...register("telegram")}
+          className="form-input"
         />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label className="text-sm font-medium">Тип объекта</Label>
+        <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+          Тип объекта
+        </label>
         <Select
           value={objectType}
           onValueChange={(v) => setValue("objectType", v)}
         >
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-full border-[var(--border-light)] bg-transparent" style={{ color: "var(--fg)" }}>
             <SelectValue placeholder="Выберите тип" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="border-[var(--border)] bg-[var(--bg-card)]">
             {OBJECT_TYPES.map((t) => (
-              <SelectItem key={t} value={t}>
+              <SelectItem key={t} value={t} className="text-[var(--fg-dim)]">
                 {t}
               </SelectItem>
             ))}
@@ -231,17 +222,19 @@ export function AuditForm({
       </div>
 
       <div className={cn("flex flex-col gap-1.5", isFull && "md:col-span-2")}>
-        <Label className="text-sm font-medium">Количество номеров</Label>
+        <label className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+          Количество номеров
+        </label>
         <Select
           value={roomsCount}
           onValueChange={(v) => setValue("roomsCount", v)}
         >
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-full border-[var(--border-light)] bg-transparent" style={{ color: "var(--fg)" }}>
             <SelectValue placeholder="Выберите диапазон" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="border-[var(--border)] bg-[var(--bg-card)]">
             {ROOMS_OPTIONS.map((r) => (
-              <SelectItem key={r} value={r}>
+              <SelectItem key={r} value={r} className="text-[var(--fg-dim)]">
                 {r}
               </SelectItem>
             ))}
@@ -250,11 +243,11 @@ export function AuditForm({
       </div>
 
       <div className={cn("flex flex-col gap-3", isFull && "md:col-span-2")}>
-        <Button
+        <button
           type="submit"
-          size="lg"
           disabled={isSubmitting}
-          className="w-full bg-brand text-brand-foreground hover:bg-brand/90 shadow-md"
+          className="flex w-full items-center justify-center gap-2 bg-[var(--accent)] py-3 text-sm font-semibold uppercase tracking-wider text-black transition-colors hover:bg-[var(--accent-bright)] disabled:opacity-60"
+          style={{ fontFamily: "'Oswald', sans-serif" }}
         >
           {isSubmitting ? (
             <>
@@ -264,10 +257,10 @@ export function AuditForm({
           ) : (
             submitLabel
           )}
-        </Button>
+        </button>
         {showNote && (
-          <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-            <ShieldCheck className="size-3.5 text-brand" />
+          <p className="flex items-center justify-center gap-1.5 text-center text-xs" style={{ color: "var(--muted)" }}>
+            <ShieldCheck className="size-3.5" style={{ color: "var(--accent)" }} />
             Ответим в течение двух часов в рабочее время.
           </p>
         )}

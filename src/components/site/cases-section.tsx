@@ -1,16 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Sparkles,
-  CalendarClock,
-  Users,
-  Rocket,
-  ArrowRight,
-} from "lucide-react";
+import { Sparkles, CalendarClock, Users, Rocket, ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "./section-primitives";
 import { useLeadStore } from "@/lib/lead-store";
-import { Button } from "@/components/ui/button";
 
 const POINTS = [
   {
@@ -34,85 +26,68 @@ export function CasesSection() {
   const open = useLeadStore((s) => s.open);
 
   return (
-    <Section id="cases" className="bg-muted/30">
+    <Section id="cases" style={{ background: "var(--bg-darker)" }}>
       <SectionHeading
-        eyebrow="Блок 9 · Кейсы"
+        eyebrow="09 — Кейсы"
         title="Наши результаты"
         subtitle="Мы честны: первые проекты ещё в работе. Поэтому сейчас мы набираем стартовую группу — и ваш объект может стать одним из первых кейсов DAGSTAY."
       />
 
       {/* Заглушка-плейсхолдер */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative mt-12 overflow-hidden rounded-3xl border border-dashed border-brand/30 bg-card p-8 sm:p-12"
-      >
-        {/* Декоративные пятна */}
-        <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-brand/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 size-64 rounded-full bg-gold/10 blur-3xl" />
-
-        <div className="relative flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-10">
-          {/* Большая цифра 5 */}
+      <div className="info-card relative mt-12 overflow-hidden p-8 sm:p-12">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-10">
+          {/* Большая цифра 5 — text-stroke style */}
           <div className="flex shrink-0 flex-col items-center justify-center gap-2">
-            <div className="relative flex size-32 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand/70 shadow-xl shadow-brand/20 sm:size-40">
-              <span className="text-6xl font-extrabold leading-none text-brand-foreground sm:text-7xl">
+            <div className="relative flex size-32 items-center justify-center border border-[var(--border-light)] sm:size-40">
+              <span className="font-display text-7xl text-stroke sm:text-8xl">
                 5
               </span>
-              <span className="absolute -right-2 -top-2 flex size-9 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-lg">
+              <span className="absolute -right-2 -top-2 flex size-9 items-center justify-center bg-[var(--gold)] text-black">
                 <Sparkles className="size-4" />
               </span>
             </div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider" style={{ color: "var(--accent)" }}>
               мест всего
             </span>
           </div>
 
           {/* Текстовые пункты */}
           <div className="flex flex-1 flex-col gap-5">
-            {POINTS.map((p, i) => (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.12, ease: "easeOut" }}
-                className="flex items-start gap-4"
-              >
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+            {POINTS.map((p) => (
+              <div key={p.title} className="flex items-start gap-4">
+                <span className="flex size-10 shrink-0 items-center justify-center bg-[var(--accent)] text-black">
                   <p.icon className="size-5" />
                 </span>
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                  <h3 className="font-heading text-base font-semibold uppercase tracking-wide sm:text-lg" style={{ color: "var(--fg)" }}>
                     {p.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground sm:text-base">
+                  <p className="text-sm sm:text-base" style={{ color: "var(--fg-dim)" }}>
                     {p.text}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
 
             <div className="mt-2">
-              <Button
-                size="lg"
+              <button
                 onClick={() => open("final", { title: "Стать одним из 5 объектов" })}
-                className="group h-12 bg-brand px-7 text-base font-semibold text-brand-foreground shadow-lg shadow-brand/20 hover:bg-brand/90"
+                className="group flex items-center gap-2 bg-[var(--accent)] px-7 py-3 text-sm font-semibold uppercase tracking-wider text-black transition-all hover:bg-[var(--accent-bright)]"
+                style={{ fontFamily: "'Oswald', sans-serif" }}
               >
                 Подать заявку на аудит
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </button>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div className="mt-10 flex flex-col items-center gap-4 text-center">
-        <p className="max-w-xl text-balance text-lg font-medium text-foreground">
+        <p className="font-heading max-w-xl text-balance text-lg font-medium uppercase tracking-wide" style={{ color: "var(--fg)" }}>
           Хотите, чтобы ваш объект вошёл в первую пятёрку?
         </p>
-        <p className="max-w-md text-sm text-muted-foreground">
+        <p className="max-w-md text-sm" style={{ color: "var(--muted)" }}>
           Оставьте заявку — расскажем условия и пришлём бесплатный аудит в
           течение двух часов.
         </p>

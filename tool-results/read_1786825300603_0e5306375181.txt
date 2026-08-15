@@ -1,0 +1,502 @@
+     1→   900→   900→                </div>
+     2→   901→   901→                <div class="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border-light)]">
+     3→   902→   902→                  <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">12 YRS · CSCS</span>
+     4→   903→   903→                  <span class="font-mono text-[10px] text-[var(--accent)] tracking-[0.15em]">HOVER →</span>
+     5→   904→   904→                </div>
+     6→   905→   905→              </div>
+     7→   906→   906→            </div>
+     8→   907→   907→            <!-- Back -->
+     9→   908→   908→            <div class="flip-face flip-back info-card p-7 flex flex-col bg-[var(--bg-card)]">
+    10→   909→   909→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-4">/ Marcus Reid — Profile</div>
+    11→   910→   910→              <h3 class="font-display text-2xl mb-5">Credentials</h3>
+    12→   911→   911→              <ul class="space-y-2.5 text-sm mb-6">
+    13→   912→   912→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>CSCS · NSCA Certified</span></li>
+    14→   913→   913→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Former National Powerlifter</span></li>
+    15→   914→   914→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Precision Nutrition L2</span></li>
+    16→   915→   915→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>StrongFirst L2</span></li>
+    17→   916→   916→              </ul>
+    18→   917→   917→              <div class="mt-auto pt-5 border-t border-[var(--border-light)]">
+    19→   918→   918→                <div class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase mb-2">Signature Workout</div>
+    20→   919→   919→                <div class="font-display text-2xl text-[var(--accent)]">IRON PROTOCOL</div>
+    21→   920→   920→                <p class="text-xs text-[var(--fg-dim)] mt-2">5×5 progressive overload — squats, presses, deadlifts.</p>
+    22→   921→   921→              </div>
+    23→   922→   922→            </div>
+    24→   923→   923→          </div>
+    25→   924→   924→        </div>
+    26→   925→   925→        
+    27→   926→   926→        <!-- Coach 2: Elena -->
+    28→   927→   927→        <div class="flip-card">
+    29→   928→   928→          <div class="flip-card-inner">
+    30→   929→   929→            <div class="flip-face flip-front info-card flex flex-col">
+    31→   930→   930→              <div class="coach-img-wrap">
+    32→   931→   931→                <img src="https://picsum.photos/seed/coachElena/600/800.jpg" alt="Elena Voss">
+    33→   932→   932→                <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">/ 02</div>
+    34→   933→   933→                <div class="absolute top-4 right-4 px-2 py-1 bg-black/60 backdrop-blur-sm font-mono text-[10px] text-[var(--fg)] tracking-[0.15em]">SPECIALIST</div>
+    35→   934→   934→                <div class="absolute bottom-4 left-4 right-4">
+    36→   935→   935→                  <div class="font-mono text-[10px] text-[var(--silver-dim)] tracking-[0.2em] uppercase">Metabolic & Conditioning</div>
+    37→   936→   936→                </div>
+    38→   937→   937→              </div>
+    39→   938→   938→              <div class="p-6 flex-1 flex flex-col justify-between">
+    40→   939→   939→                <div>
+    41→   940→   940→                  <h3 class="font-display text-3xl leading-none">ELENA VOSS</h3>
+    42→   941→   941→                  <p class="text-[var(--muted)] text-xs mt-2 font-heading tracking-wider uppercase">Conditioning Lead</p>
+    43→   942→   942→                </div>
+    44→   943→   943→                <div class="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border-light)]">
+    45→   944→   944→                  <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">8 YRS · ACE-CPT</span>
+    46→   945→   945→                  <span class="font-mono text-[10px] text-[var(--accent)] tracking-[0.15em]">HOVER →</span>
+    47→   946→   946→                </div>
+    48→   947→   947→              </div>
+    49→   948→   948→            </div>
+    50→   949→   949→            <div class="flip-face flip-back info-card p-7 flex flex-col bg-[var(--bg-card)]">
+    51→   950→   950→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-4">/ Elena Voss — Profile</div>
+    52→   951→   951→              <h3 class="font-display text-2xl mb-5">Credentials</h3>
+    53→   952→   952→              <ul class="space-y-2.5 text-sm mb-6">
+    54→   953→   953→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>ACE-CPT · PN-L1</span></li>
+    55→   954→   954→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Ex-Ironman Triathlete</span></li>
+    56→   955→   955→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>CrossFit L2</span></li>
+    57→   956→   956→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>TRX Suspension Certified</span></li>
+    58→   957→   957→              </ul>
+    59→   958→   958→              <div class="mt-auto pt-5 border-t border-[var(--border-light)]">
+    60→   959→   959→                <div class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase mb-2">Signature Workout</div>
+    61→   960→   960→                <div class="font-display text-2xl text-[var(--accent)]">BURN ENGINE</div>
+    62→   961→   961→                <p class="text-xs text-[var(--fg-dim)] mt-2">EMOM circuits — kettlebell, ropes, sled drives.</p>
+    63→   962→   962→              </div>
+    64→   963→   963→            </div>
+    65→   964→   964→          </div>
+    66→   965→   965→        </div>
+    67→   966→   966→        
+    68→   967→   967→        <!-- Coach 3: Tank -->
+    69→   968→   968→        <div class="flip-card">
+    70→   969→   969→          <div class="flip-card-inner">
+    71→   970→   970→            <div class="flip-face flip-front info-card flex flex-col">
+    72→   971→   971→              <div class="coach-img-wrap">
+    73→   972→   972→                <img src="https://picsum.photos/seed/coachTank/600/800.jpg" alt="Jiang Tank Wei">
+    74→   973→   973→                <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">/ 03</div>
+    75→   974→   974→                <div class="absolute top-4 right-4 px-2 py-1 bg-black/60 backdrop-blur-sm font-mono text-[10px] text-[var(--fg)] tracking-[0.15em]">HYPERTROPHY</div>
+    76→   975→   975→                <div class="absolute bottom-4 left-4 right-4">
+    77→   976→   976→                  <div class="font-mono text-[10px] text-[var(--silver-dim)] tracking-[0.2em] uppercase">Mass & Hypertrophy</div>
+    78→   977→   977→                </div>
+    79→   978→   978→              </div>
+    80→   979→   979→              <div class="p-6 flex-1 flex flex-col justify-between">
+    81→   980→   980→                <div>
+    82→   981→   981→                  <h3 class="font-display text-3xl leading-none">"TANK" WEI</h3>
+    83→   982→   982→                  <p class="text-[var(--muted)] text-xs mt-2 font-heading tracking-wider uppercase">Hypertrophy Specialist</p>
+    84→   983→   983→                </div>
+    85→   984→   984→                <div class="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border-light)]">
+    86→   985→   985→                  <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">10 YRS · IFBB PRO</span>
+    87→   986→   986→                  <span class="font-mono text-[10px] text-[var(--accent)] tracking-[0.15em]">HOVER →</span>
+    88→   987→   987→                </div>
+    89→   988→   988→              </div>
+    90→   989→   989→            </div>
+    91→   990→   990→            <div class="flip-face flip-back info-card p-7 flex flex-col bg-[var(--bg-card)]">
+    92→   991→   991→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-4">/ Tank Wei — Profile</div>
+    93→   992→   992→              <h3 class="font-display text-2xl mb-5">Credentials</h3>
+    94→   993→   993→              <ul class="space-y-2.5 text-sm mb-6">
+    95→   994→   994→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>IFBB Pro Bodybuilder</span></li>
+    96→   995→   995→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>NASM-CPT · PES</span></li>
+    97→   996→   996→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span> posing & Stage Coach</span></li>
+    98→   997→   997→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Contest Prep Specialist</span></li>
+    99→   998→   998→              </ul>
+   100→   999→   999→              <div class="mt-auto pt-5 border-t border-[var(--border-light)]">
+   101→  1000→  1000→                <div class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase mb-2">Signature Workout</div>
+   102→  1001→  1001→                <div class="font-display text-2xl text-[var(--accent)]">MASS ARCHITECTURE</div>
+   103→  1002→  1002→                <p class="text-xs text-[var(--fg-dim)] mt-2">High-volume split training with tempo eccentrics.</p>
+   104→  1003→  1003→              </div>
+   105→  1004→  1004→            </div>
+   106→  1005→  1005→          </div>
+   107→  1006→  1006→        </div>
+   108→  1007→  1007→        
+   109→  1008→  1008→        <!-- Coach 4: Alex -->
+   110→  1009→  1009→        <div class="flip-card">
+   111→  1010→  1010→          <div class="flip-card-inner">
+   112→  1011→  1011→            <div class="flip-face flip-front info-card flex flex-col">
+   113→  1012→  1012→              <div class="coach-img-wrap">
+   114→  1013→  1013→                <img src="https://picsum.photos/seed/coachAlex/600/800.jpg" alt="Alex Mercer">
+   115→  1014→  1014→                <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">/ 04</div>
+   116→  1015→  1015→                <div class="absolute top-4 right-4 px-2 py-1 bg-black/60 backdrop-blur-sm font-mono text-[10px] text-[var(--fg)] tracking-[0.15em]">MOVEMENT</div>
+   117→  1016→  1016→                <div class="absolute bottom-4 left-4 right-4">
+   118→  1017→  1017→                  <div class="font-mono text-[10px] text-[var(--silver-dim)] tracking-[0.2em] uppercase">Functional & Mobility</div>
+   119→  1018→  1018→                </div>
+   120→  1019→  1019→              </div>
+   121→  1020→  1020→              <div class="p-6 flex-1 flex flex-col justify-between">
+   122→  1021→  1021→                <div>
+   123→  1022→  1022→                  <h3 class="font-display text-3xl leading-none">ALEX MERCER</h3>
+   124→  1023→  1023→                  <p class="text-[var(--muted)] text-xs mt-2 font-heading tracking-wider uppercase">Movement Specialist</p>
+   125→  1024→  1024→                </div>
+   126→  1025→  1025→                <div class="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border-light)]">
+   127→  1026→  1026→                  <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">7 YRS · FRC · SFG</span>
+   128→  1027→  1027→                  <span class="font-mono text-[10px] text-[var(--accent)] tracking-[0.15em]">HOVER →</span>
+   129→  1028→  1028→                </div>
+   130→  1029→  1029→              </div>
+   131→  1030→  1030→            </div>
+   132→  1031→  1031→            <div class="flip-face flip-back info-card p-7 flex flex-col bg-[var(--bg-card)]">
+   133→  1032→  1032→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-4">/ Alex Mercer — Profile</div>
+   134→  1033→  1033→              <h3 class="font-display text-2xl mb-5">Credentials</h3>
+   135→  1034→  1034→              <ul class="space-y-2.5 text-sm mb-6">
+   136→  1035→  1035→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>FRC Mobility Specialist</span></li>
+   137→  1036→  1036→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>StrongFirst SFG-II</span></li>
+   138→  1037→  1037→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Ex-Naval PT Instructor</span></li>
+   139→  1038→  1038→                <li class="flex items-center gap-3"><i class="fas fa-circle-check text-[var(--accent)] text-xs"></i><span>Functional Patterns</span></li>
+   140→  1039→  1039→              </ul>
+   141→  1040→  1040→              <div class="mt-auto pt-5 border-t border-[var(--border-light)]">
+   142→  1041→  1041→                <div class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase mb-2">Signature Workout</div>
+   143→  1042→  1042→                <div class="font-display text-2xl text-[var(--accent)]">PRIMAL FLOW</div>
+   144→  1043→  1043→                <p class="text-xs text-[var(--fg-dim)] mt-2">Loaded movement — animal flow, mobility, kettlebell.</p>
+   145→  1044→  1044→              </div>
+   146→  1045→  1045→            </div>
+   147→  1046→  1046→          </div>
+   148→  1047→  1047→        </div>
+   149→  1048→  1048→        
+   150→  1049→  1049→      </div>
+   151→  1050→  1050→    </div>
+   152→  1051→  1051→  </section>
+   153→  1052→  1052→  
+   154→  1053→  1053→  <!-- MEMBER STORIES -->
+   155→  1054→  1054→  <section class="relative py-28 lg:py-36 overflow-hidden" id="stories">
+   156→  1055→  1055→    <div class="max-w-[1600px] mx-auto px-6 lg:px-10 mb-16">
+   157→  1056→  1056→      <div class="reveal grid lg:grid-cols-12 gap-8">
+   158→  1057→  1057→        <div class="lg:col-span-7">
+   159→  1058→  1058→          <div class="section-marker mb-6"><span>04 — Forged Here</span></div>
+   160→  1059→  1059→          <h2 class="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.9]">
+   161→  1060→  1060→            Real people.<br>
+   162→  1061→  1061→            <span class="text-[var(--accent)]">Relentless</span> change.
+   163→  1062→  1062→          </h2>
+   164→  1063→  1063→        </div>
+   165→  1064→  1064→        <div class="lg:col-span-4 lg:col-start-9 flex flex-col justify-end">
+   166→  1065→  1065→          <p class="text-[var(--fg-dim)] text-base leading-relaxed mb-5">
+   167→  1066→  1066→            Every transformation below was earned — never bought, never faked. Drag the carousel to read their journey.
+   168→  1067→  1067→          </p>
+   169→  1068→  1068→          <div class="flex items-center gap-3 font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase">
+   170→  1069→  1069→            <i class="fas fa-hand-pointer text-[var(--accent)]"></i>
+   171→  1070→  1070→            <span>Drag · Swipe · Auto-advance</span>
+   172→  1071→  1071→          </div>
+   173→  1072→  1072→        </div>
+   174→  1073→  1073→      </div>
+   175→  1074→  1074→    </div>
+   176→  1075→  1075→    
+   177→  1076→  1076→    <!-- Carousel -->
+   178→  1077→  1077→    <div class="relative overflow-hidden">
+   179→  1078→  1078→      <div class="story-track" id="storyTrack">
+   180→  1079→  1079→        
+   181→  1080→  1080→        <!-- Story 1 -->
+   182→  1081→  1081→        <article class="story-card">
+   183→  1082→  1082→          <div class="relative h-56 overflow-hidden">
+   184→  1083→  1083→            <img src="https://picsum.photos/seed/memberSarah/600/400.jpg" class="w-full h-full object-cover img-noir" alt="Sarah K.">
+   185→  1084→  1084→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 01</div>
+   186→  1085→  1085→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">-28 KG</div>
+   187→  1086→  1086→          </div>
+   188→  1087→  1087→          <div class="p-6">
+   189→  1088→  1088→            <div class="flex items-center justify-between mb-4">
+   190→  1089→  1089→              <h3 class="font-display text-2xl">SARAH K.</h3>
+   191→  1090→  1090→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">8 MONTHS</span>
+   192→  1091→  1091→            </div>
+   193→  1092→  1092→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   194→  1093→  1093→              "The community here doesn't let you quit. Every session I walked in feeling like I belonged. Walked out stronger — every single time."
+   195→  1094→  1094→            </p>
+   196→  1095→  1095→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   197→  1096→  1096→              <div>
+   198→  1097→  1097→                <div class="font-display text-xl text-[var(--accent)]">-28</div>
+   199→  1098→  1098→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KG Lost</div>
+   200→  1099→  1099→              </div>
+   201→  1100→  1100→              <div>
+   202→  1101→  1101→                <div class="font-display text-xl">+18</div>
+   203→  1102→  1102→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">% Strength</div>
+   204→  1103→  1103→              </div>
+   205→  1104→  1104→              <div>
+   206→  1105→  1105→                <div class="font-display text-xl">8</div>
+   207→  1106→  1106→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   208→  1107→  1107→              </div>
+   209→  1108→  1108→            </div>
+   210→  1109→  1109→          </div>
+   211→  1110→  1110→        </article>
+   212→  1111→  1111→        
+   213→  1112→  1112→        <!-- Story 2 -->
+   214→  1113→  1113→        <article class="story-card">
+   215→  1114→  1114→          <div class="relative h-56 overflow-hidden">
+   216→  1115→  1115→            <img src="https://picsum.photos/seed/memberDavid/600/400.jpg" class="w-full h-full object-cover img-noir" alt="David L.">
+   217→  1116→  1116→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 02</div>
+   218→  1117→  1117→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">+14 KG</div>
+   219→  1118→  1118→          </div>
+   220→  1119→  1119→          <div class="p-6">
+   221→  1120→  1120→            <div class="flex items-center justify-between mb-4">
+   222→  1121→  1121→              <h3 class="font-display text-2xl">DAVID L.</h3>
+   223→  1122→  1122→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">12 MONTHS</span>
+   224→  1123→  1123→            </div>
+   225→  1124→  1124→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   226→  1125→  1125→              "Coaches who actually care about your progress. No ego, just results. I gained 14 kg of lean mass in a year — drug free, no shortcuts."
+   227→  1126→  1126→            </p>
+   228→  1127→  1127→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   229→  1128→  1128→              <div>
+   230→  1129→  1129→                <div class="font-display text-xl text-[var(--accent)]">+14</div>
+   231→  1130→  1130→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KG Muscle</div>
+   232→  1131→  1131→              </div>
+   233→  1132→  1132→              <div>
+   234→  1133→  1133→                <div class="font-display text-xl">120</div>
+   235→  1134→  1134→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KG Bench</div>
+   236→  1135→  1135→              </div>
+   237→  1136→  1136→              <div>
+   238→  1137→  1137→                <div class="font-display text-xl">12</div>
+   239→  1138→  1138→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   240→  1139→  1139→              </div>
+   241→  1140→  1140→            </div>
+   242→  1141→  1141→          </div>
+   243→  1142→  1142→        </article>
+   244→  1143→  1143→        
+   245→  1144→  1144→        <!-- Story 3 -->
+   246→  1145→  1145→        <article class="story-card">
+   247→  1146→  1146→          <div class="relative h-56 overflow-hidden">
+   248→  1147→  1147→            <img src="https://picsum.photos/seed/memberMaya/600/400.jpg" class="w-full h-full object-cover img-noir" alt="Maya R.">
+   249→  1148→  1148→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 03</div>
+   250→  1149→  1149→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">42 KM</div>
+   251→  1150→  1150→          </div>
+   252→  1151→  1151→          <div class="p-6">
+   253→  1152→  1152→            <div class="flex items-center justify-between mb-4">
+   254→  1153→  1153→              <h3 class="font-display text-2xl">MAYA R.</h3>
+   255→  1154→  1154→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">14 MONTHS</span>
+   256→  1155→  1155→            </div>
+   257→  1156→  1156→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   258→  1157→  1157→              "I came in unable to run a mile. Walked out a marathoner at 42. IRONFORGE rewired what I believed was possible for myself."
+   259→  1158→  1158→            </p>
+   260→  1159→  1159→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   261→  1160→  1160→              <div>
+   262→  1161→  1161→                <div class="font-display text-xl text-[var(--accent)]">42</div>
+   263→  1162→  1162→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KM Run</div>
+   264→  1163→  1163→              </div>
+   265→  1164→  1164→              <div>
+   266→  1165→  1165→                <div class="font-display text-xl">-22</div>
+   267→  1166→  1166→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">% BF</div>
+   268→  1167→  1167→              </div>
+   269→  1168→  1168→              <div>
+   270→  1169→  1169→                <div class="font-display text-xl">14</div>
+   271→  1170→  1170→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   272→  1171→  1171→              </div>
+   273→  1172→  1172→            </div>
+   274→  1173→  1173→          </div>
+   275→  1174→  1174→        </article>
+   276→  1175→  1175→        
+   277→  1176→  1176→        <!-- Story 4 -->
+   278→  1177→  1177→        <article class="story-card">
+   279→  1178→  1178→          <div class="relative h-56 overflow-hidden">
+   280→  1179→  1179→            <img src="https://picsum.photos/seed/memberJames/600/400.jpg" class="w-full h-full object-cover img-noir" alt="James T.">
+   281→  1180→  1180→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 04</div>
+   282→  1181→  1181→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">REBUILD</div>
+   283→  1182→  1182→          </div>
+   284→  1183→  1183→          <div class="p-6">
+   285→  1184→  1184→            <div class="flex items-center justify-between mb-4">
+   286→  1185→  1185→              <h3 class="font-display text-2xl">JAMES T.</h3>
+   287→  1186→  1186→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">10 MONTHS</span>
+   288→  1187→  1187→            </div>
+   289→  1188→  1188→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   290→  1189→  1189→              "After back surgery they told me to take it easy. IRONFORGE rebuilt me stronger than before the injury. Deadlifted 180 kg last month."
+   291→  1190→  1190→            </p>
+   292→  1191→  1191→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   293→  1192→  1192→              <div>
+   294→  1193→  1193→                <div class="font-display text-xl text-[var(--accent)]">180</div>
+   295→  1194→  1194→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KG DL</div>
+   296→  1195→  1195→              </div>
+   297→  1196→  1196→              <div>
+   298→  1197→  1197→                <div class="font-display text-xl">0</div>
+   299→  1198→  1198→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Pain</div>
+   300→  1199→  1199→              </div>
+   301→  1200→  1200→              <div>
+   302→  1201→  1201→                <div class="font-display text-xl">10</div>
+   303→  1202→  1202→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   304→  1203→  1203→              </div>
+   305→  1204→  1204→            </div>
+   306→  1205→  1205→          </div>
+   307→  1206→  1206→        </article>
+   308→  1207→  1207→        
+   309→  1208→  1208→        <!-- Story 5 -->
+   310→  1209→  1209→        <article class="story-card">
+   311→  1210→  1210→          <div class="relative h-56 overflow-hidden">
+   312→  1211→  1211→            <img src="https://picsum.photos/seed/memberPriya/600/400.jpg" class="w-full h-full object-cover img-noir" alt="Priya N.">
+   313→  1212→  1212→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 05</div>
+   314→  1213→  1213→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">-12% BF</div>
+   315→  1214→  1214→          </div>
+   316→  1215→  1215→          <div class="p-6">
+   317→  1216→  1216→            <div class="flex items-center justify-between mb-4">
+   318→  1217→  1217→              <h3 class="font-display text-2xl">PRIYA N.</h3>
+   319→  1218→  1218→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">6 MONTHS</span>
+   320→  1219→  1219→            </div>
+   321→  1220→  1220→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   322→  1221→  1221→              "The energy is contagious. This place changes you — physically, mentally. I'm a different human than I was six months ago."
+   323→  1222→  1222→            </p>
+   324→  1223→  1223→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   325→  1224→  1224→              <div>
+   326→  1225→  1225→                <div class="font-display text-xl text-[var(--accent)]">-12</div>
+   327→  1226→  1226→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">% BF</div>
+   328→  1227→  1227→              </div>
+   329→  1228→  1228→              <div>
+   330→  1229→  1229→                <div class="font-display text-xl">+9</div>
+   331→  1230→  1230→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">KG DL</div>
+   332→  1231→  1231→              </div>
+   333→  1232→  1232→              <div>
+   334→  1233→  1233→                <div class="font-display text-xl">6</div>
+   335→  1234→  1234→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   336→  1235→  1235→              </div>
+   337→  1236→  1236→            </div>
+   338→  1237→  1237→          </div>
+   339→  1238→  1238→        </article>
+   340→  1239→  1239→        
+   341→  1240→  1240→        <!-- Story 6 -->
+   342→  1241→  1241→        <article class="story-card">
+   343→  1242→  1242→          <div class="relative h-56 overflow-hidden">
+   344→  1243→  1243→            <img src="https://picsum.photos/seed/memberCarlos/600/400.jpg" class="w-full h-full object-cover img-noir" alt="Carlos M.">
+   345→  1244→  1244→            <div class="absolute top-4 left-4 font-mono text-[10px] text-[var(--accent)] tracking-[0.2em]">CASE / 06</div>
+   346→  1245→  1245→            <div class="absolute bottom-4 right-4 px-2 py-1 bg-[var(--accent)] text-black font-mono text-[10px] tracking-[0.15em]">PRO ATHLETE</div>
+   347→  1246→  1246→          </div>
+   348→  1247→  1247→          <div class="p-6">
+   349→  1248→  1248→            <div class="flex items-center justify-between mb-4">
+   350→  1249→  1249→              <h3 class="font-display text-2xl">CARLOS M.</h3>
+   351→  1250→  1250→              <span class="font-mono text-[10px] text-[var(--muted)] tracking-[0.15em]">18 MONTHS</span>
+   352→  1251→  1251→            </div>
+   353→  1252→  1252→            <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-5 italic">
+   354→  1253→  1253→              "Went from amateur boxer to pro contract in eighteen months. The strength protocol here gave me the engine to compete at the next level."
+   355→  1254→  1254→            </p>
+   356→  1255→  1255→            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-[var(--border-light)]">
+   357→  1256→  1256→              <div>
+   358→  1257→  1257→                <div class="font-display text-xl text-[var(--accent)]">PRO</div>
+   359→  1258→  1258→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Contract</div>
+   360→  1259→  1259→              </div>
+   361→  1260→  1260→              <div>
+   362→  1261→  1261→                <div class="font-display text-xl">+35</div>
+   363→  1262→  1262→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">% Power</div>
+   364→  1263→  1263→              </div>
+   365→  1264→  1264→              <div>
+   366→  1265→  1265→                <div class="font-display text-xl">18</div>
+   367→  1266→  1266→                <div class="font-mono text-[9px] text-[var(--muted)] tracking-[0.15em] uppercase">Months</div>
+   368→  1267→  1267→              </div>
+   369→  1268→  1268→            </div>
+   370→  1269→  1269→          </div>
+   371→  1270→  1270→        </article>
+   372→  1271→  1271→        
+   373→  1272→  1272→      </div>
+   374→  1273→  1273→      
+   375→  1274→  1274→      <!-- Carousel controls -->
+   376→  1275→  1275→      <div class="max-w-[1600px] mx-auto px-6 lg:px-10 mt-10 flex items-center justify-between">
+   377→  1276→  1276→        <div class="flex items-center gap-2" id="storyDots"></div>
+   378→  1277→  1277→        <div class="flex items-center gap-3">
+   379→  1278→  1278→          <button class="w-11 h-11 border border-[var(--border-light)] hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition-all flex items-center justify-center" id="storyPrev">
+   380→  1279→  1279→            <i class="fas fa-arrow-left text-xs"></i>
+   381→  1280→  1280→          </button>
+   382→  1281→  1281→          <button class="w-11 h-11 border border-[var(--border-light)] hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition-all flex items-center justify-center" id="storyNext">
+   383→  1282→  1282→            <i class="fas fa-arrow-right text-xs"></i>
+   384→  1283→  1283→          </button>
+   385→  1284→  1284→        </div>
+   386→  1285→  1285→      </div>
+   387→  1286→  1286→    </div>
+   388→  1287→  1287→  </section>
+   389→  1288→  1288→  
+   390→  1289→  1289→  <!-- BOOKING -->
+   391→  1290→  1290→  <section class="relative py-28 lg:py-36 border-t border-[var(--border)] bg-[var(--bg-darker)]" id="booking">
+   392→  1291→  1291→    <div class="max-w-[1600px] mx-auto px-6 lg:px-10">
+   393→  1292→  1292→      
+   394→  1293→  1293→      <div class="reveal grid lg:grid-cols-12 gap-8 mb-16">
+   395→  1294→  1294→        <div class="lg:col-span-8">
+   396→  1295→  1295→          <div class="section-marker mb-6"><span>05 — Begin the Process</span></div>
+   397→  1296→  1296→          <h2 class="font-display text-6xl md:text-7xl lg:text-[7rem] leading-[0.9]">
+   398→  1297→  1297→            STOP WAITING.<br>
+   399→  1298→  1298→            <span class="text-stroke">START</span> <span class="text-[var(--accent)]">FORGING.</span>
+   400→  1299→  1299→          </h2>
+   401→  1300→  1300→        </div>
+   402→  1301→  1301→      </div>
+   403→  1302→  1302→      
+   404→  1303→  1303→      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+   405→  1304→  1304→        
+   406→  1305→  1305→        <!-- Form panel -->
+   407→  1306→  1306→        <div class="lg:col-span-7 reveal">
+   408→  1307→  1307→          <div class="booking-frame p-8 lg:p-12">
+   409→  1308→  1308→            <div class="font-mono text-[11px] text-[var(--accent)] tracking-[0.2em] uppercase mb-3">// Trial Session Request</div>
+   410→  1309→  1309→            <h3 class="font-display text-4xl mb-2">CLAIM YOUR FREE SESSION</h3>
+   411→  1310→  1310→            <p class="text-[var(--fg-dim)] text-sm mb-8">90-minute assessment, movement screen, and full program design. Limited to 30 trials monthly.</p>
+   412→  1311→  1311→            
+   413→  1312→  1312→            <form id="bookingForm" class="space-y-6">
+   414→  1313→  1313→              <div class="grid md:grid-cols-2 gap-6">
+   415→  1314→  1314→                <div>
+   416→  1315→  1315→                  <label class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase">Full Name</label>
+   417→  1316→  1316→                  <input type="text" class="form-input" placeholder="Enter your name" required>
+   418→  1317→  1317→                </div>
+   419→  1318→  1318→                <div>
+   420→  1319→  1319→                  <label class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase">Phone</label>
+   421→  1320→  1320→                  <input type="tel" class="form-input" placeholder="+1 555 000 0000" required>
+   422→  1321→  1321→                </div>
+   423→  1322→  1322→              </div>
+   424→  1323→  1323→              
+   425→  1324→  1324→              <div>
+   426→  1325→  1325→                <label class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase">Email</label>
+   427→  1326→  1326→                <input type="email" class="form-input" placeholder="you@email.com" required>
+   428→  1327→  1327→              </div>
+   429→  1328→  1328→              
+   430→  1329→  1329→              <div>
+   431→  1330→  1330→                <label class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase block mb-3">Primary Goal</label>
+   432→  1331→  1331→                <div class="flex flex-wrap gap-2" id="goalSelector">
+   433→  1332→  1332→                  <span class="goal-pill active" data-goal="muscle">Muscle Gain</span>
+   434→  1333→  1333→                  <span class="goal-pill" data-goal="fat">Fat Loss</span>
+   435→  1334→  1334→                  <span class="goal-pill" data-goal="fitness">General Fitness</span>
+   436→  1335→  1335→                  <span class="goal-pill" data-goal="athletic">Athletic Performance</span>
+   437→  1336→  1336→                  <span class="goal-pill" data-goal="rehab">Rehab / Mobility</span>
+   438→  1337→  1337→                </div>
+   439→  1338→  1338→              </div>
+   440→  1339→  1339→              
+   441→  1340→  1340→              <div>
+   442→  1341→  1341→                <label class="font-mono text-[10px] text-[var(--muted)] tracking-[0.2em] uppercase block mb-3">Preferred Time</label>
+   443→  1342→  1342→                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+   444→  1343→  1343→                  <label class="cursor-pointer">
+   445→  1344→  1344→                    <input type="radio" name="time" class="peer sr-only" checked>
+   446→  1345→  1345→                    <div class="text-center py-3 border border-[var(--border-light)] text-[var(--fg-dim)] font-heading text-xs tracking-wider uppercase peer-checked:bg-[var(--accent)] peer-checked:text-black peer-checked:border-[var(--accent)] transition-all">Early<br><span class="font-mono text-[9px]">5–9 AM</span></div>
+   447→  1346→  1346→                  </label>
+   448→  1347→  1347→                  <label class="cursor-pointer">
+   449→  1348→  1348→                    <input type="radio" name="time" class="peer sr-only">
+   450→  1349→  1349→                    <div class="text-center py-3 border border-[var(--border-light)] text-[var(--fg-dim)] font-heading text-xs tracking-wider uppercase peer-checked:bg-[var(--accent)] peer-checked:text-black peer-checked:border-[var(--accent)] transition-all">Mid<br><span class="font-mono text-[9px]">9–12</span></div>
+   451→  1350→  1350→                  </label>
+   452→  1351→  1351→                  <label class="cursor-pointer">
+   453→  1352→  1352→                    <input type="radio" name="time" class="peer sr-only">
+   454→  1353→  1353→                    <div class="text-center py-3 border border-[var(--border-light)] text-[var(--fg-dim)] font-heading text-xs tracking-wider uppercase peer-checked:bg-[var(--accent)] peer-checked:text-black peer-checked:border-[var(--accent)] transition-all">PM<br><span class="font-mono text-[9px]">12–5</span></div>
+   455→  1354→  1354→                  </label>
+   456→  1355→  1355→                  <label class="cursor-pointer">
+   457→  1356→  1356→                    <input type="radio" name="time" class="peer sr-only">
+   458→  1357→  1357→                    <div class="text-center py-3 border border-[var(--border-light)] text-[var(--fg-dim)] font-heading text-xs tracking-wider uppercase peer-checked:bg-[var(--accent)] peer-checked:text-black peer-checked:border-[var(--accent)] transition-all">Evening<br><span class="font-mono text-[9px]">5–10</span></div>
+   459→  1358→  1358→                  </label>
+   460→  1359→  1359→                </div>
+   461→  1360→  1360→              </div>
+   462→  1361→  1361→              
+   463→  1362→  1362→              <button type="submit" class="pulse-btn w-full bg-[var(--accent)] text-black py-5 font-display text-2xl tracking-wider hover:bg-[var(--accent-bright)] transition-colors flex items-center justify-center gap-4 mt-4">
+   464→  1363→  1363→                <span>BOOK FREE TRIAL</span>
+   465→  1364→  1364→                <i class="fas fa-arrow-right"></i>
+   466→  1365→  1365→              </button>
+   467→  1366→  1366→              
+   468→  1367→  1367→              <p class="text-center font-mono text-[10px] text-[var(--muted)] tracking-[0.15em] uppercase">
+   469→  1368→  1368→                No charge · No obligation · Response within 24 hours
+   470→  1369→  1369→              </p>
+   471→  1370→  1370→            </form>
+   472→  1371→  1371→          </div>
+   473→  1372→  1372→        </div>
+   474→  1373→  1373→        
+   475→  1374→  1374→        <!-- Info panel -->
+   476→  1375→  1375→        <div class="lg:col-span-5 reveal" style="--delay: 0.2s;">
+   477→  1376→  1376→          <div class="space-y-6">
+   478→  1377→  1377→            
+   479→  1378→  1378→            <div class="info-card p-7">
+   480→  1379→  1379→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-2">/ Location</div>
+   481→  1380→  1380→              <h4 class="font-display text-2xl mb-3">THE FORGE — MAIN</h4>
+   482→  1381→  1381→              <p class="text-[var(--fg-dim)] text-sm leading-relaxed mb-4">
+   483→  1382→  1382→                47 Eastbound Alley<br>
+   484→  1383→  1383→                Tribeca, NYC 10013
+   485→  1384→  1384→              </p>
+   486→  1385→  1385→              <div class="flex items-center gap-3 font-mono text-[11px] text-[var(--silver)]">
+   487→  1386→  1386→                <i class="fas fa-train text-[var(--accent)]"></i>
+   488→  1387→  1387→                <span>4 MIN · 1, 2, 3 LINES</span>
+   489→  1388→  1388→              </div>
+   490→  1389→  1389→            </div>
+   491→  1390→  1390→            
+   492→  1391→  1391→            <div class="info-card p-7">
+   493→  1392→  1392→              <div class="font-mono text-[10px] text-[var(--accent)] tracking-[0.2em] uppercase mb-2">/ Hours</div>
+   494→  1393→  1393→              <h4 class="font-display text-2xl mb-3">TRAINING TIMES</h4>
+   495→  1394→  1394→              <div class="space-y-2 text-sm">
+   496→  1395→  1395→                <div class="flex justify-between border-b border-[var(--border-light)] pb-2">
+   497→  1396→  1396→                  <span class="text-[var(--fg-dim)]">Monday — Friday</span>
+   498→  1397→  1397→                  <span class="font-mono text-[var(--silver)]">05:00 — 23:00</span>
+   499→  1398→  1398→                </div>
+   500→  1399→  1399→                <div class="flex justify-between border-b border-[var(--border-light)] pb-2">
+
+[showing lines 1-500 of 502; use offset=501 with limit to continue reading]

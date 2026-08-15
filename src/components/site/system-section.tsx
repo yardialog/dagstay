@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Search,
   Globe,
@@ -11,7 +10,6 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Section, SectionHeading } from "./section-primitives";
-import { Card, CardContent } from "@/components/ui/card";
 
 const STEPS = [
   {
@@ -48,12 +46,12 @@ const STEPS = [
 
 export function SystemSection() {
   return (
-    <Section id="system" className="bg-background">
+    <Section id="system" style={{ background: "var(--bg)" }}>
       <SectionHeading
-        eyebrow="Блок 4 · Наша система"
+        eyebrow="04 — Система"
         title={
           <>
-            Мы строим <span className="text-brand">систему</span> прямых
+            Мы строим <span style={{ color: "var(--accent)" }}>систему</span> прямых
             бронирований
           </>
         }
@@ -63,52 +61,42 @@ export function SystemSection() {
       {/* Шаги */}
       <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {STEPS.map((s, i) => (
-          <motion.div
+          <div
             key={s.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.45, delay: i * 0.07, ease: "easeOut" }}
+            className="notch-corner info-card flex h-full flex-col gap-4 p-5 transition-transform hover:-translate-y-1"
           >
-            <Card className="group relative h-full overflow-hidden border-border/70 transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5">
-              <CardContent className="flex h-full flex-col gap-4 p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
-                    <s.icon className="size-6" />
-                  </div>
-                  <span className="text-5xl font-extrabold leading-none text-muted/60 transition-colors group-hover:text-brand/15">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {s.text}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+            <div className="flex items-center justify-between">
+              <div className="flex size-11 items-center justify-center bg-[var(--accent)] text-black">
+                <s.icon className="size-5" />
+              </div>
+              <span className="font-display text-5xl leading-none" style={{ color: "var(--border-light)" }}>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="space-y-2">
+              <h3
+                className="text-lg font-semibold"
+                style={{ fontFamily: "'Oswald', sans-serif", color: "var(--fg)", textTransform: "uppercase", letterSpacing: "0.04em" }}
+              >
+                {s.title}
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--fg-dim)" }}>
+                {s.text}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
 
       {/* Итоговая плашка */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="mt-8 flex flex-col items-center gap-4 rounded-2xl border border-brand/20 bg-gradient-to-r from-brand/10 via-brand/5 to-transparent p-8 text-center"
-      >
-        <div className="flex size-12 items-center justify-center rounded-full bg-brand text-brand-foreground">
+      <div className="info-card mt-8 flex flex-col items-center gap-4 p-8 text-center">
+        <div className="flex size-12 items-center justify-center bg-[var(--accent)] text-black">
           <TrendingUp className="size-6" />
         </div>
-        <p className="max-w-2xl text-balance text-xl font-bold text-foreground sm:text-2xl">
+        <p className="font-heading max-w-2xl text-balance text-xl font-semibold uppercase tracking-wide sm:text-2xl" style={{ color: "var(--fg)" }}>
           Больше прямых бронирований. Меньше ручной работы. Выше прибыль.
         </p>
-      </motion.div>
+      </div>
     </Section>
   );
 }
