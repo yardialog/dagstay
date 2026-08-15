@@ -6,7 +6,7 @@ import { Section, SectionHeading } from "./section-primitives";
 const MONTHS = [
   {
     n: "01",
-    title: "Этап 1",
+    title: "Первый месяц",
     theme: "Создаём фундамент",
     icon: LayoutGrid,
     items: [
@@ -18,14 +18,14 @@ const MONTHS = [
   },
   {
     n: "02",
-    title: "Этап 2",
+    title: "Второй месяц",
     theme: "Автоматизация",
     icon: Cpu,
     items: ["AI-помощник", "CRM-система и учёт заявок", "Допродажи"],
   },
   {
     n: "03",
-    title: "Этап 3",
+    title: "Третий месяц",
     theme: "Рост",
     icon: TrendingUp,
     items: ["Оптимизация рекламы", "Возврат клиентов", "Масштабирование"],
@@ -38,7 +38,7 @@ export function ProcessSection() {
       <SectionHeading
         eyebrow="07 — Как мы работаем"
         title="Как выглядит внедрение"
-        subtitle="Прозрачный процесс из трёх этапов — от запуска фундамента до масштабирования и возврата гостей."
+        subtitle="Прозрачный процесс за три месяца — от запуска фундамента до масштабирования и возврата гостей."
       />
 
       <div className="relative mt-12">
@@ -58,7 +58,7 @@ export function ProcessSection() {
 
                 <div className="info-card w-full p-6">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider" style={{ color: "var(--accent)" }}>
-                    Этап {m.n}
+                    Месяц {m.n}
                   </span>
                   <h3 className="font-heading mt-2 text-xl font-bold uppercase tracking-wide" style={{ color: "var(--fg)" }}>
                     {m.title}
