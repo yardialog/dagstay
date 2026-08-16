@@ -59,3 +59,8 @@ db/*.db-journal
 
 # Upload directory (user-uploaded content)
 /upload/
+
+# Temporary screenshots and debug files
+revert-*.png
+--timeout
+tool-results/
